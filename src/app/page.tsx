@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 const ACCESS_URL = "https://bamdalin.com";
 const EMAIL = "help@hiop.com";
-const RED = "#f5c518";
+const ACCENT = "#f5c518";
 const BRAND = "하이오피";
 const SHORT = "하이오피";
 
@@ -63,9 +63,9 @@ export default function Home() {
             style={{ background: "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(245,197,24,0.20) 0%, transparent 70%)" }}
           />
           <div className="relative max-w-3xl">
-            <div className="mx-auto mb-6 h-1 w-20 rounded" style={{ background: RED }} />
+            <div className="mx-auto mb-6 h-1 w-20 rounded" style={{ background: ACCENT }} />
             <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-6">
-              하이오피 주소 <span style={{ color: RED }}>안내</span>
+              하이오피 주소 <span style={{ color: ACCENT }}>안내</span>
             </h1>
             <p className="text-base sm:text-lg leading-relaxed mb-10" style={{ color: "#b0b0b0" }}>
               하이오피 최신주소와 지역별 유흥 정보를 빠르게 안내합니다.
@@ -74,7 +74,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-red text-base px-9 py-3">
+              <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent text-base px-9 py-3">
                 최신주소 바로가기
               </a>
               <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-9 py-3">
@@ -86,7 +86,7 @@ export default function Home() {
               className="mt-9 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm"
               style={{ background: "rgba(245,197,24,0.08)", border: "1px solid rgba(245,197,24,0.3)" }}
             >
-              <span style={{ color: RED }}>북마크</span>
+              <span style={{ color: ACCENT }}>북마크</span>
               <span style={{ color: "#b0b0b0" }}>이 페이지를 저장하면 {BRAND} 관련 최신 안내를 빠르게 확인할 수 있습니다</span>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <SectionBadge>ABOUT</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-black mb-4">
-              {BRAND} <span style={{ color: RED }}>최신주소 안내 사이트</span>
+              {BRAND} <span style={{ color: ACCENT }}>최신주소 안내 사이트</span>
             </h2>
             <h3 className="text-lg font-bold mb-6" style={{ color: "#cfcfcf" }}>
               부산·울산·경남 지역 정보 유입을 위한 키워드 가이드
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <SectionBadge>SERVICE</SectionBadge>
               <h2 className="text-3xl sm:text-4xl font-black">
-                {BRAND} <span style={{ color: RED }}>사이트 특징</span>
+                {BRAND} <span style={{ color: ACCENT }}>사이트 특징</span>
               </h2>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -123,7 +123,7 @@ export default function Home() {
                   className="rounded-2xl p-7 transition-transform hover:-translate-y-1"
                   style={{ background: "linear-gradient(135deg, #131000, #1e1800)", border: "1px solid rgba(245,197,24,0.15)" }}
                 >
-                  <div className="mb-3 inline-block h-1 w-10 rounded" style={{ background: RED }} />
+                  <div className="mb-3 inline-block h-1 w-10 rounded" style={{ background: ACCENT }} />
                   <h3 className="text-lg font-black mb-3">{f.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#999" }}>{f.desc}</p>
                 </div>
@@ -137,7 +137,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <SectionBadge>FAQ</SectionBadge>
               <h2 className="text-3xl sm:text-4xl font-black">
-                자주 묻는 <span style={{ color: RED }}>질문</span>
+                자주 묻는 <span style={{ color: ACCENT }}>질문</span>
               </h2>
             </div>
             <div className="space-y-3">
@@ -153,7 +153,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <SectionBadge>BLOG</SectionBadge>
               <h2 className="text-3xl sm:text-4xl font-black">
-                {BRAND} <span style={{ color: RED }}>키워드 안내</span>
+                {BRAND} <span style={{ color: ACCENT }}>키워드 안내</span>
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -166,7 +166,7 @@ export default function Home() {
                   className="block rounded-2xl p-6 transition-colors"
                   style={{ background: "#131000", border: "1px solid rgba(245,197,24,0.15)" }}
                 >
-                  <span className="text-xs font-bold" style={{ color: RED }}>POST {String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-xs font-bold" style={{ color: ACCENT }}>POST {String(i + 1).padStart(2, "0")}</span>
                   <p className="mt-2 font-bold leading-relaxed">{title}</p>
                 </a>
               ))}
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="max-w-2xl mx-auto text-center">
             <div className="text-4xl mb-4">LINK</div>
             <h2 className="text-2xl sm:text-3xl font-black mb-4">
-              {BRAND} <span style={{ color: RED }}>도메인 패턴 안내</span>
+              {BRAND} <span style={{ color: ACCENT }}>도메인 패턴 안내</span>
             </h2>
             <p className="text-sm leading-relaxed mb-6" style={{ color: "#999" }}>
               {BRAND} 관련 도메인은 차단·접속 이슈로 변경될 수 있습니다.
               예시는 <b style={{ color: "#fff" }}>hiop37 → hiop38 → hiop39</b> 처럼 숫자가 올라가는 방식이며,
               가장 빠른 확인은 아래 최신주소 바로가기를 이용하는 것입니다.
             </p>
-            <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-red text-base px-8 py-3">
+            <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent text-base px-8 py-3">
               최신주소로 이동 →
             </a>
           </div>
@@ -210,7 +210,7 @@ export default function Home() {
       <footer className="py-10 px-5" style={{ background: "#050400", borderTop: "1px solid rgba(245,197,24,0.2)" }}>
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-5 text-center">
           <div className="flex items-center gap-1 text-xl font-black">
-            <span style={{ color: RED }}>{BRAND.slice(0, 2)}</span>
+            <span style={{ color: ACCENT }}>{BRAND.slice(0, 2)}</span>
             <span>{BRAND.slice(2) || BRAND}</span>
           </div>
           <p className="text-xs max-w-md leading-relaxed" style={{ color: "#666" }}>

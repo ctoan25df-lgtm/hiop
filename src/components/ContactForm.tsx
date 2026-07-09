@@ -60,7 +60,7 @@ export default function ContactForm({ email }: { email: string }) {
         <input type="checkbox" checked={sub} onChange={(e) => setSub(e.target.checked)} className="accent-[#f5c518]" />
         Yes, subscribe me to your newsletter.
       </label>
-      <button type="submit" className="btn-red w-full py-3">Subscribe</button>
+      <button type="submit" className="btn-accent w-full py-3">Subscribe</button>
     </form>
   );
 }

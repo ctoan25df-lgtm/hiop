@@ -43,7 +43,7 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-red ml-3 !py-2 !px-4 text-sm">
+          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent ml-3 !py-2 !px-4 text-sm">
             최신주소 바로가기 →
           </a>
         </nav>
@@ -73,7 +73,7 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-red mt-3 w-full text-sm">
+          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent mt-3 w-full text-sm">
             최신주소 바로가기 →
           </a>
         </div>

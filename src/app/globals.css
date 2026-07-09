@@ -4,8 +4,8 @@
   --color-bg:      #080800;
   --color-surface: #100e00;
   --color-card:    #181200;
-  --color-red:     #f5c518;
-  --color-red-dk:  #c9a000;
+  --color-accent:    #f5c518;
+  --color-accent-dk: #c9a000;
   --color-white:   #ffffff;
   --color-gray:    #b0b0b0;
   --color-border:  rgba(255,255,255,0.08);
@@ -28,22 +28,22 @@ h1, h2, h3, .font-display {
 
 ::-webkit-scrollbar        { width: 5px; }
 ::-webkit-scrollbar-track  { background: var(--color-bg); }
-::-webkit-scrollbar-thumb  { background: var(--color-red); border-radius: 3px; }
+::-webkit-scrollbar-thumb  { background: var(--color-accent); border-radius: 3px; }
 
-.btn-red {
+.btn-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   padding: 0.75rem 2rem;
-  background: var(--color-red);
+  background: var(--color-accent);
   color: #111;
   font-weight: 800;
   border-radius: 999px;
   text-decoration: none;
   transition: background 0.15s;
 }
-.btn-red:hover { background: var(--color-red-dk); }
+.btn-accent:hover { background: var(--color-accent-dk); }
 
 .btn-outline {
   display: inline-flex;
@@ -51,18 +51,18 @@ h1, h2, h3, .font-display {
   justify-content: center;
   gap: 0.4rem;
   padding: 0.75rem 1.5rem;
-  border: 1.5px solid var(--color-red);
-  color: var(--color-red);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
   font-weight: 700;
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.15s;
 }
-.btn-outline:hover { background: var(--color-red); color: #111; }
+.btn-outline:hover { background: var(--color-accent); color: #111; }
 
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] summary .faq-arrow { transform: rotate(180deg); }
 .faq-arrow { transition: transform 0.2s; }
 
-::selection { background: var(--color-red); color: #111; }
+::selection { background: var(--color-accent); color: #111; }
