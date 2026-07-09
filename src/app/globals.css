@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* 원본 Wix 팔레트 기반 (빨간 부산비비기 디자인 적용) */
-  --color-bg:      #0a0000;
-  --color-surface: #120000;
-  --color-card:    #1a0000;
-  --color-red:     #df3131;
-  --color-red-dk:  #b71f1f;
+  --color-bg:      #080800;
+  --color-surface: #100e00;
+  --color-card:    #181200;
+  --color-red:     #f5c518;
+  --color-red-dk:  #c9a000;
   --color-white:   #ffffff;
   --color-gray:    #b0b0b0;
   --color-border:  rgba(255,255,255,0.08);
@@ -23,7 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 원본 시그니처: 제목은 Playfair Display 세리프 (한글은 자동 폴백) */
 h1, h2, h3, .font-display {
   font-family: var(--font-playfair), var(--font-noto-kr), 'Noto Sans KR', serif;
 }
@@ -32,7 +30,6 @@ h1, h2, h3, .font-display {
 ::-webkit-scrollbar-track  { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb  { background: var(--color-red); border-radius: 3px; }
 
-/* 공통 버튼 */
 .btn-red {
   display: inline-flex;
   align-items: center;
@@ -40,7 +37,7 @@ h1, h2, h3, .font-display {
   gap: 0.4rem;
   padding: 0.75rem 2rem;
   background: var(--color-red);
-  color: #fff;
+  color: #111;
   font-weight: 800;
   border-radius: 999px;
   text-decoration: none;
@@ -61,12 +58,11 @@ h1, h2, h3, .font-display {
   text-decoration: none;
   transition: all 0.15s;
 }
-.btn-outline:hover { background: var(--color-red); color: #fff; }
+.btn-outline:hover { background: var(--color-red); color: #111; }
 
-/* FAQ 아코디언 */
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] summary .faq-arrow { transform: rotate(180deg); }
 .faq-arrow { transition: transform 0.2s; }
 
-::selection { background: var(--color-red); color: #fff; }
+::selection { background: var(--color-red); color: #111; }

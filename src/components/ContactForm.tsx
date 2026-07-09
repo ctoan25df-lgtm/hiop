@@ -15,14 +15,14 @@ export default function ContactForm({ email }: { email: string }) {
 
   const inputCls = "w-full rounded-lg px-4 py-3 text-sm focus:outline-none";
   const inputStyle = {
-    background: "#1a0000",
-    border: "1px solid rgba(223,49,49,0.25)",
+    background: "#181200",
+    border: "1px solid rgba(245,197,24,0.25)",
     color: "#fff",
   };
 
   if (done) {
     return (
-      <div className="rounded-xl py-10 text-center" style={{ background: "#1a0000", border: "1px solid rgba(223,49,49,0.3)" }}>
+      <div className="rounded-xl py-10 text-center" style={{ background: "#181200", border: "1px solid rgba(245,197,24,0.3)" }}>
         <p className="text-2xl mb-2">✅</p>
         <p className="font-bold">문의가 접수되었습니다.</p>
         <p className="text-sm mt-1" style={{ color: "#888" }}>빠른 시일 내에 답변 드리겠습니다.</p>
@@ -57,7 +57,7 @@ export default function ContactForm({ email }: { email: string }) {
         />
       </div>
       <label className="flex items-center gap-2 text-xs cursor-pointer" style={{ color: "#888" }}>
-        <input type="checkbox" checked={sub} onChange={(e) => setSub(e.target.checked)} className="accent-[#df3131]" />
+        <input type="checkbox" checked={sub} onChange={(e) => setSub(e.target.checked)} className="accent-[#f5c518]" />
         Yes, subscribe me to your newsletter.
       </label>
       <button type="submit" className="btn-red w-full py-3">Subscribe</button>

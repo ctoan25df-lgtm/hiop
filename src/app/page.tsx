@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 const ACCESS_URL = "https://bamdalin.com";
 const EMAIL = "help@hiop.com";
-const RED = "#df3131";
+const RED = "#f5c518";
 const BRAND = "하이오피";
 const SHORT = "하이오피";
 
@@ -55,12 +55,12 @@ export default function Home() {
       <main id="top">
         <section
           className="relative flex flex-col items-center text-center px-5 py-28"
-          style={{ background: "linear-gradient(180deg, #1a0000 0%, #0a0000 70%, #0a0000 100%)" }}
+          style={{ background: "linear-gradient(180deg, #181200 0%, #080800 70%, #080800 100%)" }}
         >
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
-            style={{ background: "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(223,49,49,0.20) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(245,197,24,0.20) 0%, transparent 70%)" }}
           />
           <div className="relative max-w-3xl">
             <div className="mx-auto mb-6 h-1 w-20 rounded" style={{ background: RED }} />
@@ -84,7 +84,7 @@ export default function Home() {
 
             <div
               className="mt-9 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm"
-              style={{ background: "rgba(223,49,49,0.08)", border: "1px solid rgba(223,49,49,0.3)" }}
+              style={{ background: "rgba(245,197,24,0.08)", border: "1px solid rgba(245,197,24,0.3)" }}
             >
               <span style={{ color: RED }}>북마크</span>
               <span style={{ color: "#b0b0b0" }}>이 페이지를 저장하면 {BRAND} 관련 최신 안내를 빠르게 확인할 수 있습니다</span>
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#080000" }}>
+        <section className="py-20 px-5" style={{ background: "#070700" }}>
           <div className="max-w-3xl mx-auto text-center">
             <SectionBadge>ABOUT</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-black mb-4">
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="py-20 px-5" style={{ background: "#0a0000" }}>
+        <section id="features" className="py-20 px-5" style={{ background: "#080800" }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <SectionBadge>SERVICE</SectionBadge>
@@ -121,7 +121,7 @@ export default function Home() {
                 <div
                   key={f.title}
                   className="rounded-2xl p-7 transition-transform hover:-translate-y-1"
-                  style={{ background: "linear-gradient(135deg, #150000, #240808)", border: "1px solid rgba(223,49,49,0.15)" }}
+                  style={{ background: "linear-gradient(135deg, #131000, #1e1800)", border: "1px solid rgba(245,197,24,0.15)" }}
                 >
                   <div className="mb-3 inline-block h-1 w-10 rounded" style={{ background: RED }} />
                   <h3 className="text-lg font-black mb-3">{f.title}</h3>
@@ -132,7 +132,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#080000" }}>
+        <section className="py-20 px-5" style={{ background: "#070700" }}>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <SectionBadge>FAQ</SectionBadge>
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#0a0000" }}>
+        <section className="py-20 px-5" style={{ background: "#080800" }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <SectionBadge>BLOG</SectionBadge>
@@ -164,7 +164,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block rounded-2xl p-6 transition-colors"
-                  style={{ background: "#150000", border: "1px solid rgba(223,49,49,0.15)" }}
+                  style={{ background: "#131000", border: "1px solid rgba(245,197,24,0.15)" }}
                 >
                   <span className="text-xs font-bold" style={{ color: RED }}>POST {String(i + 1).padStart(2, "0")}</span>
                   <p className="mt-2 font-bold leading-relaxed">{title}</p>
@@ -177,7 +177,7 @@ export default function Home() {
         <section
           id="domain"
           className="py-20 px-5"
-          style={{ background: "linear-gradient(135deg, #0f0000 0%, #1a0000 50%, #0f0000 100%)", borderTop: "1px solid rgba(223,49,49,0.15)", borderBottom: "1px solid rgba(223,49,49,0.15)" }}
+          style={{ background: "linear-gradient(135deg, #0d0b00 0%, #181200 50%, #0d0b00 100%)", borderTop: "1px solid rgba(245,197,24,0.15)", borderBottom: "1px solid rgba(245,197,24,0.15)" }}
         >
           <div className="max-w-2xl mx-auto text-center">
             <div className="text-4xl mb-4">LINK</div>
@@ -195,7 +195,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="py-20 px-5" style={{ background: "#0f0000", borderTop: "1px solid rgba(223,49,49,0.15)" }}>
+        <section id="contact" className="py-20 px-5" style={{ background: "#0d0b00", borderTop: "1px solid rgba(245,197,24,0.15)" }}>
           <div className="max-w-xl mx-auto text-center">
             <SectionBadge>CONTACT</SectionBadge>
             <h2 className="text-2xl sm:text-3xl font-black mb-2">문의하기</h2>
@@ -207,7 +207,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-10 px-5" style={{ background: "#050000", borderTop: "1px solid rgba(223,49,49,0.2)" }}>
+      <footer className="py-10 px-5" style={{ background: "#050400", borderTop: "1px solid rgba(245,197,24,0.2)" }}>
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-5 text-center">
           <div className="flex items-center gap-1 text-xl font-black">
             <span style={{ color: RED }}>{BRAND.slice(0, 2)}</span>
@@ -217,12 +217,12 @@ export default function Home() {
             {BRAND}는 {BRAND} 최신주소와 관련 키워드를 안내하는 가이드 사이트입니다.
             실제 정보는 연결된 최신 경로에서 확인할 수 있습니다.
           </p>
-          <a href={`mailto:${EMAIL}`} className="text-xs transition-colors hover:text-[#df3131]" style={{ color: "#555" }}>
+          <a href={`mailto:${EMAIL}`} className="text-xs transition-colors hover:text-[#f5c518]" style={{ color: "#555" }}>
             {EMAIL}
           </a>
           <div className="flex gap-4 text-xs" style={{ color: "#555" }}>
-            <a href="/privacy" className="hover:text-[#df3131]">개인정보 처리방침</a>
-            <a href="/terms" className="hover:text-[#df3131]">접근성 표시 정보</a>
+            <a href="/privacy" className="hover:text-[#f5c518]">개인정보 처리방침</a>
+            <a href="/terms" className="hover:text-[#f5c518]">접근성 표시 정보</a>
           </div>
           <p className="text-xs" style={{ color: "#333" }}>
             © 2024–{new Date().getFullYear()} {BRAND}. All rights reserved.
@@ -237,7 +237,7 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="inline-block rounded-full px-3 py-1 text-xs font-bold mb-4"
-      style={{ background: "rgba(223,49,49,0.15)", color: "#df3131", border: "1px solid rgba(223,49,49,0.3)" }}
+      style={{ background: "rgba(245,197,24,0.15)", color: "#f5c518", border: "1px solid rgba(245,197,24,0.3)" }}
     >
       {children}
     </div>
