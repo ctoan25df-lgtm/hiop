@@ -17,40 +17,54 @@ const notoKr = Noto_Sans_KR({
 });
 
 const SITE_URL = "https://hiop.com";
+const BRAND = "하이오피";
+const BRAND_EN = "hiop";
+const DESCRIPTION =
+  "하이오피(hiop) 공식 최신주소 안내 사이트입니다. 하이오피 주소, 하이오피 새주소, 하이오피 바로가기를 실시간으로 안내합니다. 부산·울산·경남 전역의 업소 정보와 최신 접속 경로를 즉시 확인하세요.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "하이오피｜최신주소 안내 사이트｜하이오피 바로가기",
-    template: "%s | 하이오피",
+    default: `${BRAND} 주소｜${BRAND} 최신주소·바로가기 안내`,
+    template: `%s | ${BRAND}`,
   },
-  description:
-    "하이오피는 부산·울산·경남 전역의 유흥명소와 지역 업소 정보를 빠르게 찾는 사용자를 위한 최신 주소 안내형 사이트입니다. 부산·울산·경남 지역 정보와 최신 접속 안내를 한눈에 확인할 수 있도록 구성했습니다.",
+  description: DESCRIPTION,
   keywords: [
     "하이오피",
     "hiop",
     "하이오피 주소",
     "하이오피 최신주소",
+    "하이오피 새주소",
     "하이오피 바로가기",
-    "부산 업소정보",
-    "부산 유흥정보",
-    "울산 지역정보",
-    "경남 지역정보",
+    "하이오피 접속",
+    "hiop 주소",
+    "하이오피37",
+    "하이오피38",
+    "하이오피39",
+    "부산 하이오피",
+    "울산 하이오피",
+    "경남 하이오피",
   ],
   alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
     locale: "ko_KR",
     url: SITE_URL,
-    siteName: "하이오피",
-    title: "하이오피 - 하이오피 최신주소와 부산·경남 유흥정보 바로가기 안내",
-    description:
-      "하이오피 검색 사용자를 위한 최신주소와 지역정보 안내 페이지입니다.",
+    siteName: BRAND,
+    title: `${BRAND} 주소 - ${BRAND} 최신주소와 바로가기 안내`,
+    description: `${BRAND}(${BRAND_EN}) 공식 최신주소 안내. 부산·울산·경남 지역 업소정보를 빠르게 확인하세요.`,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${BRAND} 최신주소 안내` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND} 주소｜${BRAND} 최신주소·바로가기`,
+    description: `${BRAND}(${BRAND_EN}) 공식 최신주소 안내. 부산·울산·경남 지역정보 실시간 확인.`,
+    images: ["/og.png"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
 };
 
@@ -61,16 +75,46 @@ const JSON_LD = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "하이오피",
-      description: "하이오피 최신주소와 부산·경남 유흥정보 바로가기 안내",
+      name: BRAND,
+      alternateName: BRAND_EN,
+      description: `${BRAND} 최신주소와 부산·울산·경남 지역 업소정보 안내 사이트`,
       inLanguage: "ko-KR",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/?q={search_term_string}` },
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#org`,
-      name: "하이오피",
+      name: BRAND,
+      alternateName: [BRAND_EN, "하이오피 바로가기"],
       url: SITE_URL,
-      areaServed: ["부산", "울산", "경상남도"],
+      sameAs: ["https://bamdalin.com"],
+      areaServed: [
+        { "@type": "City", name: "부산" },
+        { "@type": "City", name: "울산" },
+        { "@type": "AdministrativeArea", name: "경상남도" },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: `${BRAND} 주소 | ${BRAND} 최신주소 안내`,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#org` },
+      description: DESCRIPTION,
+      inLanguage: "ko-KR",
+      breadcrumb: { "@id": `${SITE_URL}/#breadcrumb` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "홈", item: SITE_URL },
+      ],
     },
   ],
 };
