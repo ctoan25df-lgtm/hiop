@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* ── CSS 변수 ──────────────────────────────── */
+
 :root {
   --color-bg:      #080800;
   --color-surface: #100e00;
@@ -9,7 +11,14 @@
   --color-white:   #ffffff;
   --color-gray:    #b0b0b0;
   --color-border:  rgba(255,255,255,0.08);
+
+  /* next/font/local이 주입하는 CSS 변수 참조 */
+  --font-display: var(--font-sannayi), 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-heading: var(--font-kimm), var(--font-sannayi), 'Apple SD Gothic Neo', sans-serif;
+  --font-body:    var(--font-pretendard), 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
 }
+
+/* ── 기본 스타일 ─────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -17,18 +26,31 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--color-bg);
   color: var(--color-white);
-  font-family: var(--font-noto-kr), -apple-system, 'Apple SD Gothic Neo',
-               'Malgun Gothic', Arial, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, .font-display {
-  font-family: var(--font-playfair), var(--font-noto-kr), 'Noto Sans KR', serif;
+/* H1 — 히어로 타이틀: Sannayi */
+h1, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
+
+/* H2, H3 — 섹션 제목: Kimm */
+h2, h3, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* ── 스크롤바 ─────────────────────────────────── */
 
 ::-webkit-scrollbar        { width: 5px; }
 ::-webkit-scrollbar-track  { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb  { background: var(--color-accent); border-radius: 3px; }
+
+/* ── 버튼 ──────────────────────────────────── */
 
 .btn-accent {
   display: inline-flex;
@@ -38,6 +60,7 @@ h1, h2, h3, .font-display {
   padding: 0.75rem 2rem;
   background: var(--color-accent);
   color: #111;
+  font-family: var(--font-body);
   font-weight: 800;
   border-radius: 999px;
   text-decoration: none;
@@ -53,6 +76,7 @@ h1, h2, h3, .font-display {
   padding: 0.75rem 1.5rem;
   border: 1.5px solid var(--color-accent);
   color: var(--color-accent);
+  font-family: var(--font-body);
   font-weight: 700;
   border-radius: 999px;
   text-decoration: none;
@@ -60,9 +84,13 @@ h1, h2, h3, .font-display {
 }
 .btn-outline:hover { background: var(--color-accent); color: #111; }
 
+/* ── FAQ ───────────────────────────────────── */
+
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] summary .faq-arrow { transform: rotate(180deg); }
 .faq-arrow { transition: transform 0.2s; }
+
+/* ── 선택 텍스트 ─────────────────────────────── */
 
 ::selection { background: var(--color-accent); color: #111; }

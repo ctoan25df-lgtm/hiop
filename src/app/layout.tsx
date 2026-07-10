@@ -1,18 +1,30 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Noto_Sans_KR } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700", "800", "900"],
-  variable: "--font-playfair",
+const pretendard = localFont({
+  src: "../fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  display: "swap",
+  weight: "100 900",
+});
+
+const kimm = localFont({
+  src: [
+    { path: "../fonts/kimm-300.woff2", weight: "300" },
+    { path: "../fonts/kimm-700.woff2", weight: "700" },
+  ],
+  variable: "--font-kimm",
   display: "swap",
 });
 
-const notoKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  variable: "--font-noto-kr",
+const sannayi = localFont({
+  src: [
+    { path: "../fonts/sannayi-300.woff2", weight: "300" },
+    { path: "../fonts/sannayi-400.woff2", weight: "400" },
+    { path: "../fonts/sannayi-700.woff2", weight: "700" },
+  ],
+  variable: "--font-sannayi",
   display: "swap",
 });
 
@@ -123,7 +135,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className={`h-full ${playfair.variable} ${notoKr.variable}`}>
+    <html lang="ko" className={`h-full ${pretendard.variable} ${kimm.variable} ${sannayi.variable}`}>
       <head>
         <script
           type="application/ld+json"

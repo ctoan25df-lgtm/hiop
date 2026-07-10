@@ -26,11 +26,10 @@ export default function SiteHeader() {
       }}
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center gap-2" aria-label={`${BRAND} 홈`}>
-          <span className="text-xl font-black tracking-tight" style={{ color: "#f5c518" }}>
-            {BRAND.slice(0, 2)}
+        <Link href="/" className="flex items-center" aria-label={`${BRAND} 홈`}>
+          <span className="text-2xl font-black tracking-tight" style={{ fontFamily: "var(--font-kimm), var(--font-sannayi), sans-serif", letterSpacing: "-0.02em" }}>
+            <span style={{ color: "#f5c518" }}>하이</span><span className="text-white">오피</span>
           </span>
-          <span className="text-xl font-black text-white">{BRAND.slice(2) || BRAND}</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
