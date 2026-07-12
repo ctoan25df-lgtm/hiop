@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const UPDATED = "2025년 1월 1일";
-const EMAIL = "help@hiop.com";
+const EMAIL = "help@noranghiop.com";
 const BRAND = "하이오피";
-const DOMAIN = "https://hiop.com";
+const DOMAIN = "https://noranghiop.com";
 const ACCENT = "#f5c518";
 
 export default function PrivacyPage() {

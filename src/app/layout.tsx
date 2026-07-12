@@ -28,7 +28,7 @@ const sannayi = localFont({
   display: "swap",
 });
 
-const SITE_URL = "https://hiop.com";
+const SITE_URL = "https://noranghiop.com";
 const BRAND = "하이오피";
 const BRAND_EN = "hiop";
 const DESCRIPTION =

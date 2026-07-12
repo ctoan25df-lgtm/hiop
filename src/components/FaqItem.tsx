@@ -8,7 +8,7 @@ export default function FaqItem({ q, a }: { q: string; a: string }) {
     >
       <summary className="flex items-center justify-between gap-4 px-6 py-4 font-bold text-sm cursor-pointer select-none">
         <span>{q}</span>
-        <span className="faq-arrow flex-shrink-0 text-lg" style={{ color: "#f5c518" }}>▾</span>
+        <span className="faq-arrow shrink-0 text-lg" style={{ color: "#f5c518" }}>▾</span>
       </summary>
       <div
         className="px-6 pb-5 pt-1 text-sm leading-relaxed"

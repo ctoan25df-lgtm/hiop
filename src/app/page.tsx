@@ -3,7 +3,7 @@ import FaqItem from "@/components/FaqItem";
 import ContactForm from "@/components/ContactForm";
 
 const ACCESS_URL = "https://bamdalin.com";
-const EMAIL = "help@hiop.com";
+const EMAIL = "help@noranghiop.com";
 const ACCENT = "#f5c518";
 const BRAND = "하이오피";
 const SHORT = "하이오피";

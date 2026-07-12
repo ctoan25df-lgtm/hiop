@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const EMAIL = "help@hiop.com";
+const EMAIL = "help@noranghiop.com";
 const BRAND = "하이오피";
 const ACCENT = "#f5c518";
 
