@@ -31,31 +31,31 @@ const sannayi = localFont({
 const SITE_URL = "https://noranghiop.com";
 const BRAND = "하이오피";
 const BRAND_EN = "hiop";
+const BRAND_ALT = "하오";
 const DESCRIPTION =
-  "하이오피(hiop) 공식 최신주소 안내 사이트입니다. 하이오피 주소, 하이오피 새주소, 하이오피 바로가기를 실시간으로 안내합니다. 부산·울산·경남 전역의 업소 정보와 최신 접속 경로를 즉시 확인하세요.";
+  "하이오피(하오, hiop)는 부산·울산·경남 전역의 업소 정보를 지역별로 안내하는 공식 플랫폼입니다. 하이오피 공식 안내 사이트에서 서비스 소개, 지역별 업소 정보, 최신 접속 경로를 확인하세요.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: BRAND,
   title: {
-    default: `${BRAND} 주소｜${BRAND} 최신주소·바로가기 안내`,
+    default: `${BRAND} | ${BRAND_ALT} · ${BRAND_EN} 공식`,
     template: `%s | ${BRAND}`,
   },
   description: DESCRIPTION,
   keywords: [
     "하이오피",
+    "하오",
     "hiop",
-    "하이오피 주소",
-    "하이오피 최신주소",
-    "하이오피 새주소",
-    "하이오피 바로가기",
-    "하이오피 접속",
-    "hiop 주소",
-    "하이오피37",
-    "하이오피38",
-    "하이오피39",
+    "하이오피 공식",
+    "hiop 공식",
+    "하이오피 플랫폼",
     "부산 하이오피",
     "울산 하이오피",
     "경남 하이오피",
+    "하오주소",
+    "하이오피 주소",
+    "하이오피 바로가기",
   ],
   alternates: { canonical: SITE_URL },
   openGraph: {
@@ -63,15 +63,13 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE_URL,
     siteName: BRAND,
-    title: `${BRAND} 주소 - ${BRAND} 최신주소와 바로가기 안내`,
-    description: `${BRAND}(${BRAND_EN}) 공식 최신주소 안내. 부산·울산·경남 지역 업소정보를 빠르게 확인하세요.`,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${BRAND} 최신주소 안내` }],
+    title: `${BRAND} — ${BRAND_ALT} · ${BRAND_EN} 공식 플랫폼`,
+    description: `${BRAND}(${BRAND_ALT}, ${BRAND_EN}) 공식 안내. 부산·울산·경남 업소 정보 플랫폼을 소개합니다.`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${BRAND} 주소｜${BRAND} 최신주소·바로가기`,
-    description: `${BRAND}(${BRAND_EN}) 공식 최신주소 안내. 부산·울산·경남 지역정보 실시간 확인.`,
-    images: ["/og.png"],
+    title: `${BRAND} | ${BRAND_ALT} · ${BRAND_EN} 공식`,
+    description: `${BRAND}(${BRAND_EN}) 공식 플랫폼 안내. 부산·울산·경남 업소 정보를 확인하세요.`,
   },
   robots: {
     index: true,
@@ -88,8 +86,8 @@ const JSON_LD = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: BRAND,
-      alternateName: BRAND_EN,
-      description: `${BRAND} 최신주소와 부산·울산·경남 지역 업소정보 안내 사이트`,
+      alternateName: [BRAND_ALT, BRAND_EN],
+      description: `${BRAND}(${BRAND_ALT}, ${BRAND_EN}) 공식 플랫폼 안내 사이트`,
       inLanguage: "ko-KR",
       potentialAction: {
         "@type": "SearchAction",
@@ -101,7 +99,7 @@ const JSON_LD = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#org`,
       name: BRAND,
-      alternateName: [BRAND_EN, "하이오피 바로가기"],
+      alternateName: [BRAND_ALT, BRAND_EN],
       url: SITE_URL,
       sameAs: ["https://bamdalin.com"],
       areaServed: [
@@ -114,7 +112,7 @@ const JSON_LD = {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: `${BRAND} 주소 | ${BRAND} 최신주소 안내`,
+      name: `${BRAND} | ${BRAND_ALT} · ${BRAND_EN} 공식`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#org` },
       description: DESCRIPTION,

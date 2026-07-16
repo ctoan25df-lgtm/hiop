@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "접근성 안내 | 하이오피",
-  description: "하이오피(부달) 서비스 접근성 및 이용 안내 페이지입니다.",
+  description: "하이오피(하오, hiop) 서비스 접근성 및 이용 안내 페이지입니다.",
+  alternates: { canonical: "https://noranghiop.com/terms" },
   robots: { index: true, follow: true },
 };
 

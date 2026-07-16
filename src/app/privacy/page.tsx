@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "개인정보 처리방침 | 하이오피",
   description: "하이오피(hiop) 개인정보 처리방침 안내 페이지입니다.",
+  alternates: { canonical: "https://noranghiop.com/privacy" },
   robots: { index: true, follow: true },
 };
 

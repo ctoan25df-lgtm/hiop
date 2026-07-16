@@ -6,7 +6,7 @@ const ACCESS_URL = "https://bamdalin.com";
 const EMAIL = "help@noranghiop.com";
 const ACCENT = "#f5c518";
 const BRAND = "하이오피";
-const SHORT = "하이오피";
+const SHORT = "하오";
 
 const FEATURES = [
   { title: "하이오피 실시간 주소 업데이트", desc: "하이오피(hiop) 도메인이 변경되거나 새로운 주소가 생길 때마다 이 페이지의 바로가기 버튼을 즉시 갱신합니다. 별도의 검색 없이 한 번에 최신 하이오피 주소로 이동할 수 있습니다." },
@@ -18,7 +18,7 @@ const FEATURES = [
 ];
 
 const FAQ = [
-  { q: "Q1. 하이오피 공식 주소와 최신주소는 어디서 확인하나요?", a: "하이오피(hiop) 공식 최신주소는 이 안내 페이지의 '바로가기' 버튼에 항상 현재 운영 중인 주소가 연결됩니다. 이 페이지를 즐겨찾기(북마크)에 저장해두면 하이오피 주소가 바뀌어도 걱정 없이 빠르게 이동할 수 있습니다." },
+  { q: "Q1. 하이오피 주소와 하오주소는 어디서 확인하나요?", a: "하오주소로도 검색되는 하이오피(hiop) 공식 최신주소는 이 안내 페이지의 바로가기 버튼에서 확인할 수 있습니다. 이 페이지를 즐겨찾기에 저장해두면 하이오피 주소가 바뀌어도 현재 운영 중인 경로로 빠르게 이동할 수 있습니다." },
   { q: "Q2. 하이오피 접속이 안 될 때는 어떻게 하나요?", a: "하이오피가 열리지 않는다면, ① 이 안내 페이지의 최신주소 바로가기 버튼을 클릭하거나, ② 브라우저 캐시와 쿠키를 삭제한 후 재시도하거나, ③ 모바일 데이터로 전환(와이파이 차단 우회)해보세요. 모두 안 된다면 하이오피 도메인이 변경된 경우입니다. 이 페이지에서 최신 경로를 바로 확인할 수 있습니다." },
   { q: "Q3. 하이오피 주소가 자주 바뀌는 이유는 무엇인가요?", a: "하이오피는 접속 제한 및 도메인 차단 이슈로 인해 주기적으로 새 도메인(hiop37, hiop38, hiop39 등)으로 이전합니다. 이는 사용자들이 안정적으로 하이오피에 접속할 수 있도록 하기 위한 조치이며, 이 안내 페이지는 항상 현재 운영 중인 최신 주소로 연결됩니다." },
   { q: "Q4. 하이오피에서 부산·울산·경남 지역 정보는 어떻게 찾나요?", a: "하이오피 접속 후 상단 지역 필터에서 부산, 울산, 창원, 김해, 양산, 거제 등 원하는 지역을 선택하면 해당 지역의 업소 정보를 바로 확인할 수 있습니다. 해운대, 서면, 연산동 등 세부 지역 검색도 지원합니다." },
@@ -65,12 +65,15 @@ export default function Home() {
           <div className="relative max-w-3xl">
             <div className="mx-auto mb-6 h-1 w-20 rounded" style={{ background: ACCENT }} />
             <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-6">
-              하이오피 주소 <span style={{ color: ACCENT }}>바로가기</span>
+              <span style={{ color: ACCENT }}>하이</span>오피{" "}
+              <span className="text-3xl sm:text-4xl font-bold" style={{ color: "#888" }}>
+                hiop
+              </span>
             </h1>
             <p className="text-base sm:text-lg leading-relaxed mb-10" style={{ color: "#b0b0b0" }}>
-              하이오피(hiop) 공식 최신주소 안내입니다. 하이오피 새주소·바로가기를 실시간으로 확인하고
+              하이오피(하오, hiop) 공식 플랫폼 안내 사이트입니다.
               <br className="hidden sm:block" />
-              부산·울산·경남 전역 업소 정보에 빠르게 접속하세요.
+              부산·울산·경남 전역 업소 정보를 지역별로 빠르게 확인하세요.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
