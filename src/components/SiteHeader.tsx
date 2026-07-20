@@ -2,80 +2,55 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const ACCESS_URL = "https://bamdalin.com";
-const BRAND = "하이오피";
-
-const NAV = [
-  { label: "메인", href: "/#top" },
-  { label: "서비스", href: "/#features" },
-  { label: "주소안내", href: "/#domain" },
-  { label: "문의", href: "/#contact" },
-];
+import { ROUTES, SITE } from "@/lib/site-brand";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full"
-      style={{
-        background: "rgba(8,8,0,0.92)",
-        backdropFilter: "blur(8px)",
-        borderBottom: "1px solid rgba(245,197,24,0.2)",
-      }}
-    >
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center" aria-label={`${BRAND} 홈`}>
-          <span className="text-2xl font-black tracking-tight" style={{ fontFamily: "var(--font-kimm), var(--font-sannayi), sans-serif", letterSpacing: "-0.02em" }}>
-            <span style={{ color: "#f5c518" }}>하이</span><span className="text-white">오피</span>
-          </span>
+    <header className="site-header">
+      <div className="page-width header-inner">
+        <Link href="/" className="brand-mark" aria-label={`${SITE.name} 홈`}>
+          <span style={{ color: SITE.accent }}>하이</span>오피
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
-          {NAV.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="rounded px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:text-[#f5c518]"
-            >
+        <nav className="desktop-nav" aria-label="주요 메뉴">
+          {ROUTES.map((item) => (
+            <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
             </Link>
           ))}
-          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent ml-3 !py-2 !px-4 text-sm">
-            최신주소 바로가기 →
-          </a>
+          <Link href="/#contact" className="btn-accent nav-cta">문의하기</Link>
         </nav>
 
         <button
           type="button"
-          aria-label="메뉴 열기"
-          onClick={() => setOpen(!open)}
-          className="flex md:hidden flex-col gap-1.5 p-2"
+          aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen((current) => !current)}
+          className="menu-button"
         >
-          <span className="block h-0.5 w-6 transition-all" style={{ background: "#f5c518", transform: open ? "rotate(45deg) translate(4px,4px)" : "" }} />
-          <span className="block h-0.5 w-6 transition-all" style={{ background: "#f5c518", opacity: open ? 0 : 1 }} />
-          <span className="block h-0.5 w-6 transition-all" style={{ background: "#f5c518", transform: open ? "rotate(-45deg) translate(4px,-4px)" : "" }} />
+          <span aria-hidden>{open ? "닫기" : "메뉴"}</span>
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t px-5 py-4 space-y-1" style={{ borderColor: "rgba(245,197,24,0.2)", background: "#080800" }}>
-          {NAV.map((item) => (
+        <nav id="mobile-navigation" className="mobile-nav" aria-label="모바일 메뉴">
+          {ROUTES.map((item) => (
             <Link
-              key={item.label}
+              key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block py-2.5 text-sm font-semibold text-white border-b"
-              style={{ borderColor: "rgba(255,255,255,0.06)" }}
+              className="mobile-nav-link"
             >
               {item.label}
             </Link>
           ))}
-          <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent mt-3 w-full text-sm">
-            최신주소 바로가기 →
-          </a>
-        </div>
+          <Link href="/#contact" onClick={() => setOpen(false)} className="btn-accent mobile-contact">
+            문의하기
+          </Link>
+        </nav>
       )}
     </header>
   );

@@ -1,26 +1,13 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://noranghiop.com";
+import { INDEXABLE_ROUTES, SITE, absoluteUrl } from "@/lib/site-brand";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-    },
-    {
-      url: `${SITE_URL}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-    },
-  ];
+  const lastModified = new Date(SITE.updatedAt);
+
+  return INDEXABLE_ROUTES.map((path) => ({
+    url: absoluteUrl(path),
+    lastModified,
+    changeFrequency: path === "/" ? "weekly" : "monthly",
+    priority: path === "/" ? 1 : 0.8,
+  }));
 }

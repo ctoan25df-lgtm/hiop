@@ -1,46 +1,89 @@
-import SiteHeader from "@/components/SiteHeader";
+import type { Metadata } from "next";
+import Link from "next/link";
 import FaqItem from "@/components/FaqItem";
 import ContactForm from "@/components/ContactForm";
+import { SITE, absoluteUrl, createPageMetadata, jsonLd } from "@/lib/site-brand";
 
-const ACCESS_URL = "https://bamdalin.com";
-const EMAIL = "help@noranghiop.com";
-const ACCENT = "#f5c518";
-const BRAND = "하이오피";
-const SHORT = "하오";
+export const metadata: Metadata = createPageMetadata({
+  title: "하이오피(하오·hiop) 도메인 기록과 안전 안내",
+  description: SITE.description,
+  path: "/",
+});
 
-const FEATURES = [
-  { title: "하이오피 실시간 주소 업데이트", desc: "하이오피(hiop) 도메인이 변경되거나 새로운 주소가 생길 때마다 이 페이지의 바로가기 버튼을 즉시 갱신합니다. 별도의 검색 없이 한 번에 최신 하이오피 주소로 이동할 수 있습니다." },
-  { title: "부산·울산·경남 전 지역 커버", desc: "하이오피는 부산 해운대·서면·연산동, 울산 남구·중구, 창원·김해·양산·거제까지 경남 전역의 지역별 업소 정보를 체계적으로 구분합니다. 원하는 지역의 하이오피 정보를 바로 확인할 수 있습니다." },
-  { title: "안전한 하이오피 접속 경로", desc: "하이오피를 사칭하는 가짜 주소와 피싱 사이트를 구분하는 방법을 안내합니다. 이 안내 페이지를 즐겨찾기해 두면 도메인이 바뀌어도 항상 진짜 하이오피 경로로 연결됩니다." },
-  { title: "모바일에서 즉시 이용 가능", desc: "스마트폰에서 하이오피 주소를 검색하면 이 안내 페이지가 가장 빠르게 열립니다. 복잡한 우회 절차 없이 버튼 한 번으로 최신 하이오피에 접속할 수 있습니다." },
-  { title: "하이오피 도메인 패턴 정리", desc: "하이오피 도메인은 hiop37, hiop38, hiop39처럼 숫자가 순차적으로 올라가는 패턴으로 변경됩니다. 이 패턴을 알아두면 새 도메인을 빠르게 예측하고 접속할 수 있습니다." },
-  { title: "하이오피 차단 우회 안내", desc: "일부 통신사·기관 네트워크에서 하이오피 접속이 차단될 수 있습니다. DNS 변경, 브라우저 설정 등 합법적인 방법으로 하이오피에 안전하게 접속하는 방법을 안내합니다." },
+const PRINCIPLES = [
+  {
+    title: "이름과 주소를 구분합니다",
+    desc: "하이오피, 하오, hiop은 검색에 쓰이는 이름일 뿐 특정 도메인의 소유권이나 공식성을 자동으로 증명하지 않습니다.",
+  },
+  {
+    title: "확인된 사실만 기록합니다",
+    desc: "숫자만 바꾼 주소를 ‘다음 도메인’으로 예측하지 않습니다. 확인 날짜, 확인 방법, 불확실성을 함께 남깁니다.",
+  },
+  {
+    title: "즐겨찾기와 재시도를 우선합니다",
+    desc: "막힐 때마다 새 주소를 찾기보다 이 안내 페이지를 북마크하고, 캐시·쿠키를 정리한 뒤 다시 열어 보는 순서를 권합니다.",
+  },
+];
+
+const STEPS = [
+  {
+    n: "01",
+    title: "이 안내를 북마크",
+    desc: "검색창에 비슷한 이름이 매번 뜨더라도, 저장해 둔 noranghiop.com에서 기록과 점검 기준을 다시 확인합니다.",
+  },
+  {
+    n: "02",
+    title: "도메인 기록 확인",
+    desc: "숫자 패턴 추측 대신 확인일과 상태가 적힌 변경 기록을 읽고, 검증되지 않은 후보 링크는 열지 않습니다.",
+  },
+  {
+    n: "03",
+    title: "캐시·재시도 후 보류",
+    desc: "페이지가 열리지 않으면 오타·캐시·쿠키를 점검하고 잠시 뒤 재시도합니다. 그래도 안 되면 접속을 보류합니다.",
+  },
 ];
 
 const FAQ = [
-  { q: "Q1. 하이오피 주소와 하오주소는 어디서 확인하나요?", a: "하오주소로도 검색되는 하이오피(hiop) 공식 최신주소는 이 안내 페이지의 바로가기 버튼에서 확인할 수 있습니다. 이 페이지를 즐겨찾기에 저장해두면 하이오피 주소가 바뀌어도 현재 운영 중인 경로로 빠르게 이동할 수 있습니다." },
-  { q: "Q2. 하이오피 접속이 안 될 때는 어떻게 하나요?", a: "하이오피가 열리지 않는다면, ① 이 안내 페이지의 최신주소 바로가기 버튼을 클릭하거나, ② 브라우저 캐시와 쿠키를 삭제한 후 재시도하거나, ③ 모바일 데이터로 전환(와이파이 차단 우회)해보세요. 모두 안 된다면 하이오피 도메인이 변경된 경우입니다. 이 페이지에서 최신 경로를 바로 확인할 수 있습니다." },
-  { q: "Q3. 하이오피 주소가 자주 바뀌는 이유는 무엇인가요?", a: "하이오피는 접속 제한 및 도메인 차단 이슈로 인해 주기적으로 새 도메인(hiop37, hiop38, hiop39 등)으로 이전합니다. 이는 사용자들이 안정적으로 하이오피에 접속할 수 있도록 하기 위한 조치이며, 이 안내 페이지는 항상 현재 운영 중인 최신 주소로 연결됩니다." },
-  { q: "Q4. 하이오피에서 부산·울산·경남 지역 정보는 어떻게 찾나요?", a: "하이오피 접속 후 상단 지역 필터에서 부산, 울산, 창원, 김해, 양산, 거제 등 원하는 지역을 선택하면 해당 지역의 업소 정보를 바로 확인할 수 있습니다. 해운대, 서면, 연산동 등 세부 지역 검색도 지원합니다." },
+  {
+    q: "하이오피, 하오, hiop은 모두 같은 뜻인가요?",
+    a: "검색 과정에서 함께 사용되는 표기이지만, 이름이 같다고 해서 모든 웹주소가 동일한 운영 주체의 사이트라는 뜻은 아닙니다. 주소별로 별도 확인이 필요합니다.",
+  },
+  {
+    q: "이 사이트가 하이오피 공식 사이트인가요?",
+    a: SITE.disclaimer,
+  },
+  {
+    q: "접속이 안 될 때 무엇을 먼저 해 볼까요?",
+    a: "우회·VPN 설정은 안내하지 않습니다. ① 이 안내 페이지를 북마크해 두고, ② 주소 오타를 확인한 뒤, ③ 브라우저 캐시와 쿠키를 정리하고 다시 열어 보세요. 조직·학교 네트워크라면 관리자 정책을 따릅니다.",
+  },
+  {
+    q: "밤달인(bamdalin.com) 링크는 무엇인가요?",
+    a: "연결된 접근 허브로 안내할 때 사용합니다. 허브 자체가 모든 하위 주소의 공식성이나 안전성을 자동 보증하지는 않으므로, 이동 전에도 철자와 브라우저 경고를 확인하세요.",
+  },
 ];
 
-const POSTS = [
-  "하이오피(hiop) 최신주소와 새주소 한눈에 보기",
-  "하이오피 도메인 패턴 — hiop37·hiop38·hiop39 변경 규칙",
-  "부산 하이오피 해운대·서면 지역 업소 정보 찾기",
-  "하이오피 접속 차단 시 빠른 우회 접속 방법",
-  "하이오피 vs 유사 사이트 — 진짜 주소 구별법",
-  "하이오피 공식 안내 페이지를 즐겨찾기해야 하는 이유",
-];
-
-const FAQ_LD = {
+const HOME_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ.map((f) => ({
-    "@type": "Question",
-    name: f.q.replace(/^Q\d+\.\s*/, ""),
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${absoluteUrl()}#webpage`,
+      url: absoluteUrl(),
+      name: `${SITE.name} 도메인 기록과 안전 안내`,
+      description: SITE.description,
+      inLanguage: SITE.language,
+      isPartOf: { "@id": `${SITE.url}/#website` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${absoluteUrl()}#faq`,
+      mainEntity: FAQ.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ],
 };
 
 export default function Home() {
@@ -48,104 +91,136 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(HOME_SCHEMA) }}
       />
-      <SiteHeader />
-
-      <main id="top">
-        <section
-          className="relative flex flex-col items-center text-center px-5 py-28"
-          style={{ background: "linear-gradient(180deg, #181200 0%, #080800 70%, #080800 100%)" }}
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0"
-            style={{ background: "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(245,197,24,0.20) 0%, transparent 70%)" }}
-          />
-          <div className="relative max-w-3xl">
-            <div className="mx-auto mb-6 h-1 w-20 rounded" style={{ background: ACCENT }} />
-            <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-6">
-              <span style={{ color: ACCENT }}>하이</span>오피{" "}
-              <span className="text-3xl sm:text-4xl font-bold" style={{ color: "#888" }}>
-                hiop
-              </span>
+      <main id="main-content">
+        <section className="hero">
+          <div className="page-width hero-inner">
+            <p className="eyebrow">독립 도메인 아카이브 · 안전 확인 안내</p>
+            <h1>
+              <span>하이오피</span>·하오·hiop,
+              <br />
+              이름보다 <em>주소의 근거</em>를 봅니다
             </h1>
-            <p className="text-base sm:text-lg leading-relaxed mb-10" style={{ color: "#b0b0b0" }}>
-              하이오피(하오, hiop) 공식 플랫폼 안내 사이트입니다.
-              <br className="hidden sm:block" />
-              부산·울산·경남 전역 업소 정보를 지역별로 빠르게 확인하세요.
+            <p className="hero-copy">
+              여러 표기와 변동 주소가 섞인 검색 결과에서 확인 가능한 사실과 추정을
+              나누어 기록합니다. 공식성을 자처하지 않으며, 차단 우회·VPN 설정은
+              안내하지 않습니다. 북마크와 캐시·재시도로 안전하게 확인하세요.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent text-base px-9 py-3">
-                최신주소 바로가기
-              </a>
-              <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-9 py-3">
-                {SHORT} 바로가기
-              </a>
+            <div className="hero-actions">
+              <Link href="/guide/domain-changelog" className="btn-accent">도메인 기록 읽기</Link>
+              <Link href="/guide/safe-access" className="btn-outline">접속 전 확인사항</Link>
             </div>
-
-            <div
-              className="mt-9 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm"
-              style={{ background: "rgba(245,197,24,0.08)", border: "1px solid rgba(245,197,24,0.3)" }}
-            >
-              <span style={{ color: ACCENT }}>북마크</span>
-              <span style={{ color: "#b0b0b0" }}>이 페이지를 저장하면 {BRAND} 관련 최신 안내를 빠르게 확인할 수 있습니다</span>
-            </div>
+            <p className="bookmark-hint">
+              이 페이지를 즐겨찾기에 저장해 두면, 비슷한 이름의 검색 결과 사이에서
+              같은 안내 기준으로 돌아올 수 있습니다.
+            </p>
+            <p className="disclaimer">{SITE.disclaimer}</p>
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#070700" }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionBadge>ABOUT</SectionBadge>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4">
-              {BRAND} <span style={{ color: ACCENT }}>최신주소 안내 사이트</span>
-            </h2>
-            <h3 className="text-lg font-bold mb-6" style={{ color: "#cfcfcf" }}>
-              하이오피 주소 변경 시에도 항상 최신 경로로 안내
-            </h3>
-            <p className="text-base leading-loose" style={{ color: "#999" }}>
-              하이오피(hiop)는 부산·울산·경남 전역의 업소 정보를 제공하는 플랫폼으로, 도메인이 주기적으로 변경됩니다.
-              이 안내 페이지는 하이오피 주소·하이오피 새주소·하이오피 바로가기를 검색하는 이용자가
-              복잡한 우회 과정 없이 <strong style={{ color: "#fff" }}>최신 하이오피 주소</strong>로 즉시 이동하도록 구성되었습니다.
-              해운대·서면·연산동·울산·창원·김해·양산 등 경남 전역 정보를 빠르게 확인하세요.
-            </p>
+        <section className="section">
+          <div className="page-width">
+            <div className="section-heading">
+              <p className="eyebrow">확인 순서</p>
+              <h2>북마크 → 기록 → 재시도</h2>
+              <p>
+                하이오피·하오·hiop 검색은 비슷한 철자와 광고성 링크가 섞이기 쉽습니다.
+                새 주소를 추측하기보다 저장된 안내로 돌아와 기록과 점검 목록을 다시
+                확인하는 편이 안전합니다.
+              </p>
+            </div>
+            <ol className="step-rail">
+              {STEPS.map((step) => (
+                <li key={step.n}>
+                  <span className="step-num">{step.n}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.desc}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
-        <section id="features" className="py-20 px-5" style={{ background: "#080800" }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <SectionBadge>SERVICE</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-black">
-                {BRAND} <span style={{ color: ACCENT }}>사이트 특징</span>
-              </h2>
+        <section className="section section-alt">
+          <div className="page-width">
+            <div className="section-heading">
+              <p className="eyebrow">왜 별도 기록이 필요한가</p>
+              <h2>같은 이름, 다른 주소를 구분하는 기준</h2>
+              <p>
+                ‘하이오피’와 축약형 ‘하오’, 영문 ‘hiop’은 검색어로 함께 등장합니다.
+                그러나 유사한 철자, 숫자가 붙은 주소, 광고성 리디렉션이 섞이면 이름만으로
+                운영 주체를 판별하기 어렵습니다. 이 사이트는 주소를 대신 선택해 주기보다
+                이용자가 근거를 직접 확인할 수 있도록 기록 방식과 점검 기준을 공개합니다.
+              </p>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {FEATURES.map((f) => (
-                <div
-                  key={f.title}
-                  className="rounded-2xl p-7 transition-transform hover:-translate-y-1"
-                  style={{ background: "linear-gradient(135deg, #131000, #1e1800)", border: "1px solid rgba(245,197,24,0.15)" }}
-                >
-                  <div className="mb-3 inline-block h-1 w-10 rounded" style={{ background: ACCENT }} />
-                  <h3 className="text-lg font-black mb-3">{f.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#999" }}>{f.desc}</p>
-                </div>
+            <div className="card-grid">
+              {PRINCIPLES.map((item) => (
+                <article className="info-card" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#070700" }}>
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <SectionBadge>FAQ</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-black">
-                자주 묻는 <span style={{ color: ACCENT }}>질문</span>
-              </h2>
+        <section className="section">
+          <div className="page-width split-section">
+            <div>
+              <p className="eyebrow">기록 원칙</p>
+              <h2>도메인 이력은 ‘예측’이 아니라 ‘검증 메모’입니다</h2>
             </div>
-            <div className="space-y-3">
+            <div className="prose-compact">
+              <p>
+                번호가 증가하는 것처럼 보이더라도 다음 번호가 실제 주소라는 근거는 없습니다.
+                제3자가 비슷한 주소를 먼저 등록할 수도 있고, 정상 페이지처럼 꾸민 뒤 개인정보를
+                요구할 수도 있습니다. 그래서 이 사이트의 변경 기록은 확인일과 상태를 함께 표시하고,
+                확인되지 않은 후보를 활성 링크로 제공하지 않습니다.
+              </p>
+              <Link href="/guide/domain-changelog" className="text-link">
+                기록 기준과 현재 상태 보기 →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-alt">
+          <div className="page-width access-band">
+            <div>
+              <p className="eyebrow">연결 허브</p>
+              <h2>확인된 접근 경로로 이동할 때</h2>
+              <p>
+                별도 허브가 필요할 때는{" "}
+                <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer">
+                  bamdalin.com
+                </a>
+                으로 연결합니다. 이동 전에도 주소 표시줄 철자와 브라우저 경고를 확인하세요.
+              </p>
+            </div>
+            <div className="hero-actions">
+              <a
+                href={SITE.accessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent"
+              >
+                접근 허브 열기
+              </a>
+              <Link href="/guide/safe-access" className="btn-outline">
+                안전 체크리스트
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="page-width narrow">
+            <div className="section-heading">
+              <p className="eyebrow">FAQ</p>
+              <h2>자주 묻는 질문</h2>
+            </div>
+            <div className="faq-list">
               {FAQ.map((item) => (
                 <FaqItem key={item.q} q={item.q} a={item.a} />
               ))}
@@ -153,98 +228,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-5" style={{ background: "#080800" }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <SectionBadge>BLOG</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-black">
-                {BRAND} <span style={{ color: ACCENT }}>키워드 안내</span>
-              </h2>
+        <section id="contact" className="section contact-section">
+          <div className="page-width contact-grid">
+            <div>
+              <p className="eyebrow">CONTACT</p>
+              <h2>기록 정정과 안전 문제 제보</h2>
+              <p>
+                잘못된 날짜, 오해를 부르는 표현, 의심스러운 링크를 알려 주세요.
+                제보만으로 공식 주소로 등록하지 않으며 검토 결과에 따라 반영합니다.
+              </p>
+              <a className="text-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {POSTS.map((title, i) => (
-                <a
-                  key={title}
-                  href={ACCESS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-2xl p-6 transition-colors"
-                  style={{ background: "#131000", border: "1px solid rgba(245,197,24,0.15)" }}
-                >
-                  <span className="text-xs font-bold" style={{ color: ACCENT }}>POST {String(i + 1).padStart(2, "0")}</span>
-                  <p className="mt-2 font-bold leading-relaxed">{title}</p>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="domain"
-          className="py-20 px-5"
-          style={{ background: "linear-gradient(135deg, #0d0b00 0%, #181200 50%, #0d0b00 100%)", borderTop: "1px solid rgba(245,197,24,0.15)", borderBottom: "1px solid rgba(245,197,24,0.15)" }}
-        >
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="text-4xl mb-4">LINK</div>
-            <h2 className="text-2xl sm:text-3xl font-black mb-4">
-              {BRAND} <span style={{ color: ACCENT }}>도메인 패턴 안내</span>
-            </h2>
-            <p className="text-sm leading-relaxed mb-6" style={{ color: "#999" }}>
-              하이오피 도메인은 접속 차단 시 <b style={{ color: "#fff" }}>hiop37 → hiop38 → hiop39</b> 형태로
-              순차적으로 변경됩니다. 새 주소가 생길 때마다 이 안내 페이지가 자동으로 최신 경로를 반영하므로,
-              하이오피 바로가기를 매번 검색하지 않아도 됩니다. 지금 즐겨찾기에 추가해 두세요.
-            </p>
-            <a href={ACCESS_URL} target="_blank" rel="noopener noreferrer" className="btn-accent text-base px-8 py-3">
-              최신주소로 이동 →
-            </a>
-          </div>
-        </section>
-
-        <section id="contact" className="py-20 px-5" style={{ background: "#0d0b00", borderTop: "1px solid rgba(245,197,24,0.15)" }}>
-          <div className="max-w-xl mx-auto text-center">
-            <SectionBadge>CONTACT</SectionBadge>
-            <h2 className="text-2xl sm:text-3xl font-black mb-2">문의하기</h2>
-            <p className="text-sm mb-8" style={{ color: "#888" }}>
-              제휴·키워드·주소 오류 신고는 아래로 남겨 주세요.
-            </p>
-            <ContactForm email={EMAIL} />
+            <ContactForm email={SITE.email} />
           </div>
         </section>
       </main>
-
-      <footer className="py-10 px-5" style={{ background: "#050400", borderTop: "1px solid rgba(245,197,24,0.2)" }}>
-        <div className="max-w-5xl mx-auto flex flex-col items-center gap-5 text-center">
-          <div className="flex items-center gap-1 text-xl font-black">
-            <span style={{ color: ACCENT }}>{BRAND.slice(0, 2)}</span>
-            <span>{BRAND.slice(2) || BRAND}</span>
-          </div>
-          <p className="text-xs max-w-md leading-relaxed" style={{ color: "#666" }}>
-            {BRAND}는 {BRAND} 최신주소와 관련 키워드를 안내하는 가이드 사이트입니다.
-            실제 정보는 연결된 최신 경로에서 확인할 수 있습니다.
-          </p>
-          <a href={`mailto:${EMAIL}`} className="text-xs transition-colors hover:text-[#f5c518]" style={{ color: "#555" }}>
-            {EMAIL}
-          </a>
-          <div className="flex gap-4 text-xs" style={{ color: "#555" }}>
-            <a href="/privacy" className="hover:text-[#f5c518]">개인정보 처리방침</a>
-            <a href="/terms" className="hover:text-[#f5c518]">접근성 표시 정보</a>
-          </div>
-          <p className="text-xs" style={{ color: "#333" }}>
-            © 2024–{new Date().getFullYear()} {BRAND}. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </>
-  );
-}
-
-function SectionBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="inline-block rounded-full px-3 py-1 text-xs font-bold mb-4"
-      style={{ background: "rgba(245,197,24,0.15)", color: "#f5c518", border: "1px solid rgba(245,197,24,0.3)" }}
-    >
-      {children}
-    </div>
   );
 }

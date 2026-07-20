@@ -3,64 +3,45 @@
 import { useState } from "react";
 
 export default function ContactForm({ email }: { email: string }) {
-  const [addr, setAddr] = useState("");
-  const [msg, setMsg]   = useState("");
-  const [sub, setSub]   = useState(false);
-  const [done, setDone] = useState(false);
+  const [replyTo, setReplyTo] = useState("");
+  const [message, setMessage] = useState("");
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
-    setDone(true);
-  }
-
-  const inputCls = "w-full rounded-lg px-4 py-3 text-sm focus:outline-none";
-  const inputStyle = {
-    background: "#181200",
-    border: "1px solid rgba(245,197,24,0.25)",
-    color: "#fff",
-  };
-
-  if (done) {
-    return (
-      <div className="rounded-xl py-10 text-center" style={{ background: "#181200", border: "1px solid rgba(245,197,24,0.3)" }}>
-        <p className="text-2xl mb-2">✅</p>
-        <p className="font-bold">문의가 접수되었습니다.</p>
-        <p className="text-sm mt-1" style={{ color: "#888" }}>빠른 시일 내에 답변 드리겠습니다.</p>
-      </div>
-    );
+    const subject = encodeURIComponent("[하이오피 안내] 기록 정정·안전 제보");
+    const body = encodeURIComponent(`회신 이메일: ${replyTo}\n\n문의 내용:\n${message}`);
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   }
 
   return (
-    <form onSubmit={submit} className="space-y-3 text-left">
+    <form onSubmit={submit} className="contact-form">
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#888" }}>Email *</label>
+        <label htmlFor="contact-email">회신받을 이메일</label>
         <input
+          id="contact-email"
           type="email"
-          value={addr}
-          onChange={(e) => setAddr(e.target.value)}
+          value={replyTo}
+          onChange={(e) => setReplyTo(e.target.value)}
           required
-          placeholder={email}
-          className={inputCls}
-          style={inputStyle}
+          autoComplete="email"
+          placeholder="name@example.com"
         />
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#888" }}>문의 내용 *</label>
+        <label htmlFor="contact-message">문의 내용</label>
         <textarea
-          value={msg}
-          onChange={(e) => setMsg(e.target.value)}
+          id="contact-message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           required
-          rows={4}
-          placeholder="문의하실 내용을 입력해 주세요."
-          className={inputCls}
-          style={inputStyle}
+          rows={6}
+          placeholder="정정할 페이지와 근거 또는 안전 문제를 구체적으로 적어 주세요."
         />
       </div>
-      <label className="flex items-center gap-2 text-xs cursor-pointer" style={{ color: "#888" }}>
-        <input type="checkbox" checked={sub} onChange={(e) => setSub(e.target.checked)} className="accent-[#f5c518]" />
-        Yes, subscribe me to your newsletter.
-      </label>
-      <button type="submit" className="btn-accent w-full py-3">Subscribe</button>
+      <p className="form-help">
+        전송 버튼을 누르면 기본 이메일 앱이 열립니다. 이 웹사이트는 입력 내용을 서버에 저장하지 않습니다.
+      </p>
+      <button type="submit" className="btn-accent">이메일로 문의 보내기</button>
     </form>
   );
 }
