@@ -4,6 +4,8 @@ export const SITE = {
   name: "하이오피",
   shortName: "하오",
   latinName: "hiop",
+  aliases: ["하오", "hiop", "하이오피"],
+  searchIntent: "하이오피 도메인 기록과 안전한 주소 확인 원칙을 찾는 검색",
   url: "https://noranghiop.com",
   email: "help@noranghiop.com",
   accessUrl: "https://bamdalin.com",
@@ -13,6 +15,10 @@ export const SITE = {
   updatedAt: "2026-07-20",
   description:
     "하이오피·하오·hiop 이름으로 알려진 도메인의 변동 기록과 안전한 주소 확인 원칙을 정리하는 독립 안내 사이트입니다.",
+  shareImage: {
+    url: "/opengraph-image",
+    alt: "하이오피 도메인 기록과 안전 확인 안내",
+  },
   disclaimer:
     "이 사이트는 특정 서비스 운영사의 공식 사이트가 아닌 독립 안내 페이지이며, 외부 주소의 운영 주체나 안전성을 보증하지 않습니다.",
 } as const;
@@ -66,27 +72,27 @@ export function createPageMetadata({
   type = "website",
   noIndex = false,
 }: PageMetadata): Metadata {
-  const canonical = absoluteUrl(path);
-
   return {
     title,
     description,
-    alternates: { canonical },
+    alternates: { canonical: path },
     robots: noIndex
       ? { index: false, follow: false }
       : { index: true, follow: true },
     openGraph: {
       type,
       locale: SITE.locale,
-      url: canonical,
+      url: path,
       siteName: SITE.name,
-      title: `${title} | ${SITE.name}`,
+      title,
       description,
+      images: [{ ...SITE.shareImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${SITE.name}`,
+      title,
       description,
+      images: [SITE.shareImage.url],
     },
   };
 }

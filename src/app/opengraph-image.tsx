@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { SITE } from "@/lib/site-brand";
 
-export const alt = "하이오피·하오·hiop 도메인 기록과 안전 확인 안내";
+export const alt = "하이오피와 하오 도메인 기록 및 안전 확인 안내";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -32,7 +32,7 @@ export default async function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", fontSize: 84, marginTop: 28, letterSpacing: "-0.04em" }}>
           <span style={{ color: SITE.accent }}>하이오피</span>
-          <span> · 하오 · hiop</span>
+          <span> · 하오</span>
         </div>
         <div style={{ display: "flex", fontSize: 40, color: "#d8d4bd", marginTop: 30 }}>
           도메인 기록과 안전 확인 안내

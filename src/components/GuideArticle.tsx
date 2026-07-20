@@ -21,7 +21,7 @@ export default function GuideArticle({
         <nav aria-label="현재 위치" className="breadcrumb">
           <Link href="/">홈</Link>
           <span aria-hidden>/</span>
-          <span>가이드</span>
+          <span>{title}</span>
         </nav>
         <header className="article-header">
           <p className="eyebrow">{eyebrow}</p>

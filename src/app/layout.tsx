@@ -39,19 +39,21 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  alternates: { canonical: SITE.url },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: SITE.locale,
-    url: SITE.url,
+    url: "/",
     siteName: SITE.name,
     title: `${SITE.name} 도메인 기록과 안전 확인 안내`,
     description: SITE.description,
+    images: [{ ...SITE.shareImage, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} 도메인 기록과 안전 확인 안내`,
     description: SITE.description,
+    images: [SITE.shareImage.url],
   },
   robots: {
     index: true,
@@ -66,7 +68,7 @@ const WEBSITE_SCHEMA = {
   "@id": `${SITE.url}/#website`,
   url: SITE.url,
   name: SITE.name,
-  alternateName: [SITE.shortName, SITE.latinName],
+  alternateName: SITE.aliases,
   description: SITE.description,
   inLanguage: SITE.language,
 };
