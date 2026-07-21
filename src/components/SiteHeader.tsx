@@ -26,7 +26,7 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
             className="btn-accent nav-cta"
           >
-            bamdalin.com 이동
+            하이오피 이동
           </a>
         </nav>
 
