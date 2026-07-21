@@ -61,7 +61,7 @@ export default function SiteHeader() {
             onClick={() => setOpen(false)}
             className="btn-accent mobile-contact"
           >
-            bamdalin.com 이동
+            {`${SITE.name} 이동`}
           </a>
         </nav>
       )}

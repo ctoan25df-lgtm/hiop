@@ -114,7 +114,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-accent"
               >
-                bamdalin.com 이동
+                {`${SITE.name} 이동`}
               </a>
               <Link href="/guide/domain-changelog" className="btn-outline">도메인 기록 읽기</Link>
               <Link href="/guide/safe-access" className="btn-outline">접속 전 확인사항</Link>
