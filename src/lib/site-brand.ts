@@ -4,20 +4,21 @@ export const SITE = {
   name: "하이오피",
   shortName: "하오",
   latinName: "hiop",
-  aliases: ["하오", "hiop", "하이오피"],
-  searchIntent: "하이오피 도메인 기록과 안전한 주소 확인 원칙을 찾는 검색",
+  aliases: ["하오", "hiop", "하이오피", "하이오피 주소"],
+  searchIntent:
+    "하이오피·하오·hiop 숫자형 도메인 추측을 피하고 확인된 주소 기록만 보려는 검색",
   url: "https://noranghiop.com",
   email: "help@noranghiop.com",
   accessUrl: "https://bamdalin.com",
   locale: "ko_KR",
   language: "ko-KR",
   accent: "#f5c518",
-  updatedAt: "2026-07-20",
+  updatedAt: "2026-07-21",
   description:
-    "하이오피·하오·hiop 이름으로 알려진 도메인의 변동 기록과 안전한 주소 확인 원칙을 정리하는 독립 안내 사이트입니다.",
+    "하이오피 주소·하오 주소·hiop 주소를 확인하는 안내입니다. 숫자만 바꾼 추측 대신 확인된 연결 경로와 도메인 기록을 제공합니다.",
   shareImage: {
     url: "/opengraph-image",
-    alt: "하이오피 도메인 기록과 안전 확인 안내",
+    alt: "하이오피 주소 · 하오 주소 · hiop 주소 안내",
   },
   disclaimer:
     "이 사이트는 특정 서비스 운영사의 공식 사이트가 아닌 독립 안내 페이지이며, 외부 주소의 운영 주체나 안전성을 보증하지 않습니다.",
@@ -72,8 +73,10 @@ export function createPageMetadata({
   type = "website",
   noIndex = false,
 }: PageMetadata): Metadata {
+  const pageTitle = title.includes("|") ? { absolute: title } : title;
+
   return {
-    title,
+    title: pageTitle,
     description,
     alternates: { canonical: path },
     robots: noIndex

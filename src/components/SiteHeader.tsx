@@ -20,7 +20,14 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#contact" className="btn-accent nav-cta">문의하기</Link>
+          <a
+            href={SITE.accessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent nav-cta"
+          >
+            bamdalin.com 이동
+          </a>
         </nav>
 
         <button
@@ -47,9 +54,15 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#contact" onClick={() => setOpen(false)} className="btn-accent mobile-contact">
-            문의하기
-          </Link>
+          <a
+            href={SITE.accessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="btn-accent mobile-contact"
+          >
+            bamdalin.com 이동
+          </a>
         </nav>
       )}
     </header>

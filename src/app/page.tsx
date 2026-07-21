@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { SITE, absoluteUrl, createPageMetadata, jsonLd } from "@/lib/site-brand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "하이오피(하오·hiop) 도메인 기록과 안전 안내",
+  title: "하이오피 주소 | 하오·hiop 주소 안내",
   description: SITE.description,
   path: "/",
 });
@@ -46,19 +46,19 @@ const STEPS = [
 const FAQ = [
   {
     q: "하이오피, 하오, hiop은 모두 같은 뜻인가요?",
-    a: "검색 과정에서 함께 사용되는 표기이지만, 이름이 같다고 해서 모든 웹주소가 동일한 운영 주체의 사이트라는 뜻은 아닙니다. 주소별로 별도 확인이 필요합니다.",
+    a: "검색에는 함께 쓰이지만 표기가 같다고 모든 호스트가 같은 운영 주체라는 뜻은 아닙니다. 이 사이트는 이름 대응표가 아니라 주소별 확인 기록을 남깁니다.",
   },
   {
-    q: "이 사이트가 하이오피 공식 사이트인가요?",
-    a: SITE.disclaimer,
+    q: "왜 hiop 뒤에 숫자가 붙은 주소가 검색에 많이 보이나요?",
+    a: "이용자가 다음 번호를 추측해 열 것을 기대하는 패턴이 퍼져 있기 때문입니다. 도메인 등록은 순번제가 아니므로 ‘이전 번호 + 1’은 확인 방법이 아니라 피싱에 악용될 수 있는 추측입니다. 숫자형 후보는 근거가 없으면 기록에 링크로 올리지 않습니다.",
   },
   {
-    q: "접속이 안 될 때 무엇을 먼저 해 볼까요?",
-    a: "우회·VPN 설정은 안내하지 않습니다. ① 이 안내 페이지를 북마크해 두고, ② 주소 오타를 확인한 뒤, ③ 브라우저 캐시와 쿠키를 정리하고 다시 열어 보세요. 조직·학교 네트워크라면 관리자 정책을 따릅니다.",
+    q: "도메인 기록의 ‘검토 중’은 무엇을 뜻하나요?",
+    a: "제보나 관찰은 있으나 운영 주체·이전 관계를 독립적으로 확인하지 못한 상태입니다. 검토 중 항목은 활성 링크로 제공하지 않으며, 확인됨으로 바꾸려면 서로 다른 근거가 둘 이상 필요합니다.",
   },
   {
     q: "밤달인(bamdalin.com) 링크는 무엇인가요?",
-    a: "연결된 접근 허브로 안내할 때 사용합니다. 허브 자체가 모든 하위 주소의 공식성이나 안전성을 자동 보증하지는 않으므로, 이동 전에도 철자와 브라우저 경고를 확인하세요.",
+    a: "이 아카이브가 연결하는 접근 경로입니다. 허브 이동만으로 다른 숫자형 hiop 주소의 안전성이 증명되지는 않으므로, 주소창 철자와 브라우저 경고를 따로 확인하세요.",
   },
 ];
 
@@ -69,7 +69,7 @@ const HOME_SCHEMA = {
       "@type": "WebPage",
       "@id": `${absoluteUrl()}#webpage`,
       url: absoluteUrl(),
-      name: `${SITE.name} 도메인 기록과 안전 안내`,
+      name: "하이오피 주소 | 하오·hiop 주소 안내",
       description: SITE.description,
       inLanguage: SITE.language,
       isPartOf: { "@id": `${SITE.url}/#website` },
@@ -96,19 +96,27 @@ export default function Home() {
       <main id="main-content">
         <section className="hero">
           <div className="page-width hero-inner">
-            <p className="eyebrow">독립 도메인 아카이브 · 안전 확인 안내</p>
+            <p className="eyebrow">하이오피 주소 안내</p>
             <h1>
-              <span>하이오피</span>·하오·hiop,
+              하이오피 주소 | 하오·hiop
               <br />
-              이름보다 <em>주소의 근거</em>를 봅니다
+              <em>주소 안내</em>
             </h1>
             <p className="hero-copy">
-              여러 표기와 변동 주소가 섞인 검색 결과에서 확인 가능한 사실과 추정을
-              나누어 기록합니다. 공식성을 자처하지 않으며, 차단 우회·VPN 설정은
-              안내하지 않습니다. 북마크와 캐시·재시도로 안전하게 확인하세요.
+              <strong>하이오피 주소</strong>·하오 주소·hiop 주소를 찾는
+              안내입니다. 숫자만 바꾼 도메인을 추측하지 말고, 확인된 연결
+              경로와 도메인 기록을 확인하세요.
             </p>
             <div className="hero-actions">
-              <Link href="/guide/domain-changelog" className="btn-accent">도메인 기록 읽기</Link>
+              <a
+                href={SITE.accessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent"
+              >
+                bamdalin.com 이동
+              </a>
+              <Link href="/guide/domain-changelog" className="btn-outline">도메인 기록 읽기</Link>
               <Link href="/guide/safe-access" className="btn-outline">접속 전 확인사항</Link>
             </div>
             <p className="bookmark-hint">
