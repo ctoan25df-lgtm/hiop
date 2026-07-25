@@ -8,7 +8,7 @@ import {
 import { SITE, absoluteUrl, createPageMetadata, jsonLd } from "@/lib/site-brand";
 
 const PATH = "/guide/domain-changelog";
-const TITLE = "하이오피 도메인 변경 기록";
+const TITLE = "하이오피·하오 도메인 기록 | 숫자형 검증";
 const DESCRIPTION =
   "하이오피·하오·hiop 관련 주소를 기록할 때 적용하는 검증 기준과, 숫자형 후보를 추측하지 않고 남기는 관찰 로그를 공개합니다.";
 const UPDATED = "2026년 7월 21일";

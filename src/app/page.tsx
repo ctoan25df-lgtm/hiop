@@ -4,8 +4,10 @@ import FaqItem from "@/components/FaqItem";
 import ContactForm from "@/components/ContactForm";
 import { SITE, absoluteUrl, createPageMetadata, jsonLd } from "@/lib/site-brand";
 
+const PAGE_TITLE = "하이오피·하오 주소 | 숫자형 도메인 검증";
+
 export const metadata: Metadata = createPageMetadata({
-  title: "하이오피 주소 | 하오·hiop 주소 안내",
+  title: PAGE_TITLE,
   description: SITE.description,
   path: "/",
 });
@@ -69,7 +71,7 @@ const HOME_SCHEMA = {
       "@type": "WebPage",
       "@id": `${absoluteUrl()}#webpage`,
       url: absoluteUrl(),
-      name: "하이오피 주소 | 하오·hiop 주소 안내",
+      name: PAGE_TITLE,
       description: SITE.description,
       inLanguage: SITE.language,
       isPartOf: { "@id": `${SITE.url}/#website` },
@@ -96,28 +98,33 @@ export default function Home() {
       <main id="main-content">
         <section className="hero">
           <div className="page-width hero-inner">
-            <p className="eyebrow">하이오피 주소 안내</p>
+            <p className="eyebrow">숫자형 도메인 검증</p>
             <h1>
-              하이오피 주소 | 하오·hiop
+              하이오피·하오 주소
               <br />
-              <em>주소 안내</em>
+              <em>숫자형 도메인 검증</em>
             </h1>
             <p className="hero-copy">
-              <strong>하이오피 주소</strong>·하오 주소·hiop 주소를 찾는
-              안내입니다. 숫자만 바꾼 도메인을 추측하지 말고, 확인된 연결
-              경로와 도메인 기록을 확인하세요.
+              <strong>하이오피</strong>·하오·hiop 주소를 찾을 때 hiop 뒤
+              숫자를 바꿔 추측하지 마세요. 번호 +1은 확인 방법이 아니라
+              피싱에 악용될 수 있습니다. 확인된 도메인 기록과 연결 경로만
+              따르세요.
             </p>
             <div className="hero-actions">
+              <Link href="/guide/domain-changelog" className="btn-accent">
+                도메인 기록 보기
+              </Link>
+              <Link href="/guide/safe-access" className="btn-outline">
+                접속 전 확인사항
+              </Link>
               <a
                 href={SITE.accessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-accent"
+                className="btn-outline"
               >
-                {`${SITE.name} 이동`}
+                연결 경로 열기
               </a>
-              <Link href="/guide/domain-changelog" className="btn-outline">도메인 기록 읽기</Link>
-              <Link href="/guide/safe-access" className="btn-outline">접속 전 확인사항</Link>
             </div>
             <p className="bookmark-hint">
               이 페이지를 즐겨찾기에 저장해 두면, 비슷한 이름의 검색 결과 사이에서

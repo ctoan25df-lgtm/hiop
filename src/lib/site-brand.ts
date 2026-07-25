@@ -6,16 +6,16 @@ export const SITE = {
   latinName: "hiop",
   aliases: ["하오", "hiop", "하이오피", "하이오피 주소"],
   searchIntent:
-    "하이오피·하오·hiop 숫자형 도메인 추측을 피하고 확인된 주소 기록만 보려는 검색",
+    "하이오피·하오·hiop 주소와 숫자형 도메인을 번호 추측 없이 검증·기록하려는 검색",
   url: "https://noranghiop.com",
   email: "help@noranghiop.com",
   accessUrl: "https://bamdalin.com",
   locale: "ko_KR",
   language: "ko-KR",
   accent: "#f5c518",
-  updatedAt: "2026-07-21",
+  updatedAt: "2026-07-25",
   description:
-    "하이오피 주소·하오 주소·hiop 주소를 확인하는 안내입니다. 숫자만 바꾼 추측 대신 확인된 연결 경로와 도메인 기록을 제공합니다.",
+    "하이오피·하오·hiop 주소 안내. hiop 뒤 숫자를 바꿔 추측하지 않고, 확인된 연결 경로와 도메인 변경 기록만 제공합니다.",
   shareImage: {
     url: "/opengraph-image",
     alt: "하이오피 주소 · 하오 주소 · hiop 주소 안내",
