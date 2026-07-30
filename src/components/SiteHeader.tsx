@@ -20,14 +20,6 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={SITE.accessUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-accent nav-cta"
-          >
-            하이오피 이동
-          </a>
         </nav>
 
         <button
@@ -54,15 +46,6 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={SITE.accessUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="btn-accent mobile-contact"
-          >
-            {`${SITE.name} 이동`}
-          </a>
         </nav>
       )}
     </header>

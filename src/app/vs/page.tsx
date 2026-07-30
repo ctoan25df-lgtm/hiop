@@ -124,11 +124,11 @@ export default function VsPage() {
           <h2>이 사이트에 기준을 적용하면</h2>
           <p>
             noranghiop.com은 하이오피 운영사의 공식 사이트라고 주장하지 않습니다.
-            숫자 패턴으로 다음 주소를 예측하지 않으며, 연결이 필요할 때는 접근 허브(
-            <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer">
-              bamdalin.com
+            숫자 패턴으로 다음 주소를 예측하지 않으며, 별도 대안 정보가 필요할 때는
+            <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer sponsored nofollow">
+              바로가기
             </a>
-            )를 안내합니다. 문서별 검토일과 정정 연락처를 공개하며 문의 양식은
+            을 구분해 안내합니다. 문서별 검토일과 정정 연락처를 공개하며 문의 양식은
             내용을 서버에 저장하지 않고 이용자의 이메일 앱을 엽니다.
           </p>
           <p>

@@ -4,7 +4,7 @@ import FaqItem from "@/components/FaqItem";
 import ContactForm from "@/components/ContactForm";
 import { SITE, absoluteUrl, createPageMetadata, jsonLd } from "@/lib/site-brand";
 
-const PAGE_TITLE = "하이오피·하오 주소 | 숫자형 도메인 검증";
+const PAGE_TITLE = "하이오피·하오 주소 검증 | 숫자형 도메인·대안 비교";
 
 export const metadata: Metadata = createPageMetadata({
   title: PAGE_TITLE,
@@ -60,7 +60,7 @@ const FAQ = [
   },
   {
     q: "밤달인(bamdalin.com) 링크는 무엇인가요?",
-    a: "이 아카이브가 연결하는 접근 경로입니다. 허브 이동만으로 다른 숫자형 hiop 주소의 안전성이 증명되지는 않으므로, 주소창 철자와 브라우저 경고를 따로 확인하세요.",
+    a: "밤의달인은 하이오피와 별개의 대안 플랫폼입니다. noranghiop.com은 하이오피 운영사의 공식 주소가 아니며, 대안 링크를 열더라도 숫자형 hiop 주소의 안전성이 증명되는 것은 아닙니다.",
   },
 ];
 
@@ -107,8 +107,8 @@ export default function Home() {
             <p className="hero-copy">
               <strong>하이오피</strong>·하오·hiop 주소를 찾을 때 hiop 뒤
               숫자를 바꿔 추측하지 마세요. 번호 +1은 확인 방법이 아니라
-              피싱에 악용될 수 있습니다. 확인된 도메인 기록과 연결 경로만
-              따르세요.
+              피싱에 악용될 수 있습니다. 공식 주소는 운영 주체의 출처로
+              확인하고, 밤의달인은 별도 대안으로 구분하세요.
             </p>
             <div className="hero-actions">
               <Link href="/guide/domain-changelog" className="btn-accent">
@@ -120,10 +120,10 @@ export default function Home() {
               <a
                 href={SITE.accessUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer sponsored nofollow"
                 className="btn-outline"
               >
-                연결 경로 열기
+                바로가기
               </a>
             </div>
             <p className="bookmark-hint">
@@ -203,25 +203,15 @@ export default function Home() {
         <section className="section section-alt">
           <div className="page-width access-band">
             <div>
-              <p className="eyebrow">연결 허브</p>
-              <h2>확인된 접근 경로로 이동할 때</h2>
+              <p className="eyebrow">플랫폼 관계</p>
+              <h2>하이오피와 밤의달인은 별개입니다</h2>
               <p>
-                별도 허브가 필요할 때는{" "}
-                <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer">
-                  bamdalin.com
-                </a>
-                으로 연결합니다. 이동 전에도 주소 표시줄 철자와 브라우저 경고를 확인하세요.
+                noranghiop.com은 하이오피 운영사의 공식 주소가 아닙니다.
+                밤의달인 링크는 별도의 비교 대안이며, 하이오피의 현재 주소나
+                운영 관계를 인증하지 않습니다.
               </p>
             </div>
             <div className="hero-actions">
-              <a
-                href={SITE.accessUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-accent"
-              >
-                접근 허브 열기
-              </a>
               <Link href="/guide/safe-access" className="btn-outline">
                 안전 체크리스트
               </Link>

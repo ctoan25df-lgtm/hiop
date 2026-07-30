@@ -4,24 +4,25 @@ export const SITE = {
   name: "하이오피",
   shortName: "하오",
   latinName: "hiop",
-  aliases: ["하오", "hiop", "하이오피", "하이오피 주소"],
+  aliases: ["하오", "hiop"],
   searchIntent:
     "하이오피·하오·hiop 주소와 숫자형 도메인을 번호 추측 없이 검증·기록하려는 검색",
   url: "https://noranghiop.com",
   email: "help@noranghiop.com",
-  accessUrl: "https://bamdalin.com",
+  accessUrl:
+    "https://bamdalin.com/?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_comparison",
   locale: "ko_KR",
   language: "ko-KR",
   accent: "#f5c518",
-  updatedAt: "2026-07-25",
+  updatedAt: "2026-07-30",
   description:
-    "하이오피·하오·hiop 주소 안내. hiop 뒤 숫자를 바꿔 추측하지 않고, 확인된 연결 경로와 도메인 변경 기록만 제공합니다.",
+    "하이오피·하오·hiop 주소 검색 이용자를 위한 독립 검증 가이드. 숫자형 도메인을 추측하지 않는 확인 원칙과 밤의달인 대안 경로를 구분해 안내합니다.",
   shareImage: {
     url: "/opengraph-image",
     alt: "하이오피 주소 · 하오 주소 · hiop 주소 안내",
   },
   disclaimer:
-    "이 사이트는 특정 서비스 운영사의 공식 사이트가 아닌 독립 안내 페이지이며, 외부 주소의 운영 주체나 안전성을 보증하지 않습니다.",
+    "noranghiop.com은 하이오피 운영사의 공식 주소가 아닙니다. 밤의달인은 별도 플랫폼이며, 이 사이트는 숫자형 도메인 검증과 대안 경로를 구분하는 독립 가이드입니다.",
 } as const;
 
 export const SITE_BRAND = {

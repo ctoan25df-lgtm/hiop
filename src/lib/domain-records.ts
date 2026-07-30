@@ -13,25 +13,17 @@ export type DomainRecord = {
 };
 
 /**
- * Verified observation log for hiop-related hosts.
+ * Observation log for hiop-related hosts.
  * Unverified numbered mirror guesses are intentionally omitted.
  */
 export const DOMAIN_RECORDS: readonly DomainRecord[] = [
   {
-    observedAt: "2026-07-21",
+    observedAt: "2026-07-30",
     host: "noranghiop.com",
     status: "확인됨",
     evidenceSummary:
-      "이 안내 허브의 현재 호스트. 하이오피·하오·hiop 검색 이용자에게 검증 기준과 연결 허브를 공개하는 독립 페이지로 운영 중.",
+      "이 독립 안내서의 현재 호스트. 하이오피·하오·hiop 검색 이용자에게 주소 검증 기준을 공개합니다.",
     notes: "공식성 인증이 아니라 북마크용 기준점입니다.",
-  },
-  {
-    observedAt: "2026-07-21",
-    host: "bamdalin.com",
-    status: "확인됨",
-    evidenceSummary:
-      "이 안내 허브가 연결하는 접근 경로. 이동 전 주소창 철자와 브라우저 경고를 별도로 확인해야 합니다.",
-    notes: "허브 연결만으로 하위 주소의 안전성을 보증하지 않습니다.",
   },
   {
     observedAt: "2026-07-20",
@@ -51,4 +43,4 @@ export function getLatestReviewDate() {
   return DOMAIN_RECORDS.map((row) => row.observedAt).sort().at(-1) ?? SITE_FALLBACK_DATE;
 }
 
-const SITE_FALLBACK_DATE = "2026-07-21";
+const SITE_FALLBACK_DATE = "2026-07-30";

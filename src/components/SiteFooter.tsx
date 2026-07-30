@@ -18,7 +18,6 @@ export default function SiteFooter() {
           <Link href="/privacy">개인정보 처리방침</Link>
           <Link href="/terms">이용약관</Link>
           <a href={`mailto:${SITE.email}`}>문의 이메일</a>
-          <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer">접근 허브</a>
         </nav>
       </div>
       <p className="copyright">

@@ -62,11 +62,13 @@ export default function SafeAccessPage() {
           <p>
             검색 결과는 비슷한 이름과 광고 링크가 섞이기 쉽습니다.
             <Link href="/"> noranghiop.com 홈</Link>을 즐겨찾기에 저장해 두면
-            같은 점검 기준과 도메인 기록으로 돌아올 수 있습니다. 허브가 필요할 때는{" "}
-            <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer">
-              bamdalin.com
+            같은 점검 기준과 도메인 기록으로 돌아올 수 있습니다. 별도 대안 정보가
+            필요할 때는{" "}
+            <a href={SITE.accessUrl} target="_blank" rel="noopener noreferrer sponsored nofollow">
+              바로가기
             </a>
-            으로 이동하되, 열기 전에도 주소 표시줄을 확인하세요.
+            을 비교할 수 있지만 하이오피의 공식 주소가 아니라는 점을 구분하고,
+            열기 전에도 주소 표시줄을 확인하세요.
           </p>
         </section>
 
