@@ -89,24 +89,24 @@ export default function Home() {
               <em>경남 지역 오피 가이드</em>
             </h1>
             <p className="hero-copy">
-              울산오피부터 생활권·야간 이동 기준으로 정리합니다. 최신 목록 확인은
-              별도 플랫폼 밤의달인(<strong>bamdalin.com</strong>) 바로가기로
-              연결됩니다.
+              경남 오피는 생활권·야간 이동부터 나눕니다. 우선 울산(삼산동·달동·
+              성남동·무거동) 기준으로 정리하고, 공개 목록 비교가 필요할 때만
+              별도 플랫폼 밤의달인으로 이어집니다.
             </p>
             <div className="hero-actions">
-              <a
-                href={SITE.accessUrl}
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="btn-accent"
-              >
-                밤의달인 바로가기
-              </a>
               {ulsan && (
-                <Link href={`/${ulsan.slug}`} className="btn-outline">
-                  울산오피 가이드
+                <Link href={`/${ulsan.slug}`} className="btn-accent">
+                  울산오피 생활권 보기
                 </Link>
               )}
+              <a
+                href={ulsan ? regionListingUrl(ulsan) : SITE.accessUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-outline"
+              >
+                밤의달인 울산 목록 보기
+              </a>
             </div>
             <p className="disclaimer">{SITE.disclaimer}</p>
           </div>
