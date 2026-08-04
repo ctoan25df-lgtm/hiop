@@ -35,23 +35,23 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
   title: {
-    default: "하이오피·하오 주소 검증 | 숫자형 도메인·대안 비교",
+    default: "하이오피 | 경남 지역 오피·울산오피 가이드",
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: SITE.url },
   openGraph: {
     type: "website",
     locale: SITE.locale,
-    url: "/",
+    url: SITE.url,
     siteName: SITE.name,
-    title: "하이오피·하오 주소 검증 | 숫자형 도메인·대안 비교",
+    title: "하이오피 | 경남 지역 오피·울산오피 가이드",
     description: SITE.description,
     images: [{ ...SITE.shareImage, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "하이오피·하오 주소 검증 | 숫자형 도메인·대안 비교",
+    title: "하이오피 | 경남 지역 오피·울산오피 가이드",
     description: SITE.description,
     images: [SITE.shareImage.url],
   },
@@ -64,13 +64,33 @@ export const metadata: Metadata = {
 
 const WEBSITE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE.url}/#website`,
-  url: SITE.url,
-  name: SITE.name,
-  alternateName: SITE.aliases,
-  description: SITE.description,
-  inLanguage: SITE.language,
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      alternateName: SITE.aliases,
+      description: SITE.description,
+      inLanguage: SITE.language,
+      publisher: { "@id": `${SITE.url}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      alternateName: SITE.aliases,
+      url: SITE.url,
+      email: SITE.email,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/opengraph-image"),
+        width: 1200,
+        height: 630,
+      },
+      image: absoluteUrl("/opengraph-image"),
+    },
+  ],
 };
 
 export default function RootLayout({

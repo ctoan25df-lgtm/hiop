@@ -831,6 +831,137 @@ a {
   }
 }
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 18px;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.district-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.district-tags span {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.hero-note,
+.prose-p {
+  margin: 18px 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.region-card {
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #161409, #0d0d05);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.region-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 197, 24, 0.5);
+}
+
+.region-card span {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.region-card strong {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+}
+
+.region-card p,
+.region-card em {
+  margin: 0;
+  color: var(--color-muted);
+  font-style: normal;
+}
+
+.region-card em {
+  color: var(--color-accent);
+  font-weight: 750;
+}
+
+.region-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.region-sections .info-card .step-num {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.checklist li {
+  position: relative;
+  padding: 16px 18px 16px 46px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: #121006;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: var(--color-accent);
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .region-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 520px) {
   .page-width {
     width: min(100% - 30px, 1120px);

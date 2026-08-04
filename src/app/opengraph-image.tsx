@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { SITE } from "@/lib/site-brand";
 
-export const alt = "하이오피와 하오 도메인 기록 및 안전 확인 안내";
+export const alt = "하이오피 · 경남 지역 오피 · 울산오피 가이드";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,18 +28,17 @@ export default async function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", color: SITE.accent, fontSize: 25, letterSpacing: "0.12em" }}>
-          독립 도메인 아카이브
+          GYEONGNAM · REGIONAL OPI
         </div>
         <div style={{ display: "flex", fontSize: 84, marginTop: 28, letterSpacing: "-0.04em" }}>
           <span style={{ color: SITE.accent }}>하이오피</span>
-          <span> · 하오</span>
         </div>
         <div style={{ display: "flex", fontSize: 40, color: "#d8d4bd", marginTop: 30 }}>
-          도메인 기록과 안전 확인 안내
+          경남 지역 오피 · 울산오피 가이드
         </div>
         <div style={{ width: 1040, height: 2, background: "rgba(245,197,24,.35)", marginTop: 48 }} />
         <div style={{ display: "flex", fontSize: 22, color: "#aaa68f", marginTop: 22 }}>
-          공식성을 보증하지 않고, 확인 가능한 근거와 안전 원칙을 기록합니다.
+          생활권 안내 후 밤의달인(bamdalin.com)으로 연결합니다.
         </div>
       </div>
     ),

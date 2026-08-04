@@ -20,13 +20,17 @@ const SCHEMA = {
   "@graph": [
     {
       "@type": "Article",
+      "@id": `${absoluteUrl(PATH)}#article`,
       headline: TITLE,
       description: DESCRIPTION,
-      dateModified: "2026-07-20",
+      datePublished: "2026-07-20",
+      dateModified: SITE.updatedAt,
       inLanguage: SITE.language,
       mainEntityOfPage: absoluteUrl(PATH),
-      author: { "@type": "Organization", name: `${SITE.name} 안내` },
-      publisher: { "@type": "Organization", name: `${SITE.name} 안내` },
+      image: absoluteUrl("/opengraph-image"),
+      author: { "@id": `${SITE.url}/#organization` },
+      publisher: { "@id": `${SITE.url}/#organization` },
+      isPartOf: { "@id": `${SITE.url}/#website` },
     },
     {
       "@type": "BreadcrumbList",
