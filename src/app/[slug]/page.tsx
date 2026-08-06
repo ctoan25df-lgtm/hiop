@@ -115,7 +115,7 @@ export default async function RegionPage({ params }: Props) {
               rel="noopener noreferrer sponsored"
               className="btn-accent"
             >
-              밤의달인 바로가기
+              밤의달인 {region.name} 목록 보기
             </a>
             <Link href="/" className="btn-outline">
               경남 지역 목록
@@ -192,7 +192,7 @@ export default async function RegionPage({ params }: Props) {
             rel="noopener noreferrer sponsored"
             className="btn-accent"
           >
-            밤의달인 바로가기
+            밤의달인 {region.name} 목록 보기
           </a>
         </div>
       </section>

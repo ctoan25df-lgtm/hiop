@@ -11,7 +11,7 @@ export const SITE = {
   url: "https://noranghiop.com",
   email: "help@noranghiop.com",
   accessUrl:
-    "https://bamdalin.com/?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_region",
+    "https://bamdalin.com/board/region/gyeongnam?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_region",
   locale: "ko_KR",
   language: "ko-KR",
   accent: "#f5c518",

@@ -162,7 +162,7 @@ export default function Home() {
                   rel="noopener noreferrer sponsored"
                   className="btn-accent"
                 >
-                  밤의달인 울산 보기
+                  밤의달인 울산 목록 보기
                 </a>
               </div>
             </div>
@@ -182,12 +182,12 @@ export default function Home() {
             </div>
             <div className="hero-actions">
               <a
-                href={SITE.accessUrl}
+                href={ulsan ? regionListingUrl(ulsan) : SITE.accessUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn-accent"
               >
-                밤의달인 바로가기
+                밤의달인 울산 목록 보기
               </a>
             </div>
           </div>
