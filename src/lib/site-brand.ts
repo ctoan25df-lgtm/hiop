@@ -12,6 +12,10 @@ export const SITE = {
   email: "help@noranghiop.com",
   accessUrl:
     "https://bamdalin.com/board/region/gyeongnam?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_region",
+  busanListingUrl:
+    "https://bamdalin.com/board/region/busan?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_region",
+  ulsanListingUrl:
+    "https://bamdalin.com/board/region/ulsan?utm_source=noranghiop.com&utm_medium=referral&utm_campaign=hiop_region",
   locale: "ko_KR",
   language: "ko-KR",
   accent: "#f5c518",

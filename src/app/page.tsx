@@ -100,12 +100,28 @@ export default function Home() {
                 </Link>
               )}
               <a
-                href={ulsan ? regionListingUrl(ulsan) : SITE.accessUrl}
+                href={SITE.ulsanListingUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn-outline"
               >
-                밤의달인 울산 목록 보기
+                울산 목록
+              </a>
+              <a
+                href={SITE.accessUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-outline"
+              >
+                경남 목록
+              </a>
+              <a
+                href={SITE.busanListingUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-outline"
+              >
+                부산 목록
               </a>
             </div>
             <p className="disclaimer">{SITE.disclaimer}</p>
@@ -182,12 +198,28 @@ export default function Home() {
             </div>
             <div className="hero-actions">
               <a
-                href={ulsan ? regionListingUrl(ulsan) : SITE.accessUrl}
+                href={SITE.ulsanListingUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="btn-accent"
               >
-                밤의달인 울산 목록 보기
+                울산 목록
+              </a>
+              <a
+                href={SITE.accessUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-outline"
+              >
+                경남 목록
+              </a>
+              <a
+                href={SITE.busanListingUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="btn-outline"
+              >
+                부산 목록
               </a>
             </div>
           </div>
